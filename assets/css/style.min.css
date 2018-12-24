@@ -1958,10 +1958,10 @@ width: 100%
 /*list-style: none*/
 /*}*/
 
-/*.post-content img:not([class~=link-avatar]) {*/
-/*max-width: 90%;*/
-/*display: inline*/
-/*}*/
+.post-content img:not([class~=link-avatar]) {
+    max-width: 90%;
+    display: inline
+}
 
 .post-content img:not([class~=link-avatar]):not([no-fancybox]) {
     background: #fff;

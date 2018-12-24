@@ -80,9 +80,14 @@ function threadedComments($comments, $options) {
         <?php if($this->allow('comment')): ?>
             <?php $this->comments()->to($comments); ?>
 
-            <div class="gitment-comments-list ">
+            <pre class="line-numbers">
+                <code class="language-markup">
+                       <div class="gitment-comments-list ">
                 <?php $comments->listComments(); ?>
             </div>
+
+                </code>
+            </pre>
 
         <?php endif; ?>
 

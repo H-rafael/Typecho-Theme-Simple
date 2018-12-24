@@ -16,8 +16,10 @@ $this->need('header.php');
         <div data-v-0759750a="" class="comments">
             <div data-v-0759750a="" class="gitment">
                 <div data-v-0759750a="" id="lite-gitment-root">
-                    <div lang="en-US" class="gitment-container gitment-root-container">
-                        <?php $this->content(); ?>
+                    <div lang="en-US" class="gitment-container gitment-root-container ">
+                        <div class="post-content">
+                            <?php $this->content(); ?>
+                        </div>
                         <div>
                             <div lang="en-US" class="gitment-container gitment-header-container">
                                 <span class="gitment-header-like-btn">

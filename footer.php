@@ -25,6 +25,8 @@
     }
 
 </script>
+<!--<script src="--><?php //$this->options->themeUrl('assets/js-simple/main.min.js?v=f083046d90'); ?><!--"></script>-->
+
 <?php if($this->options->statistics) $this->options->statistics(); ?>
 <?php $this->footer(); ?>
 </body>

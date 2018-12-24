@@ -27,9 +27,9 @@
 
     <link href="<?php $this->options->themeUrl('assets/css/app.c64eadfc8d3abfc9d85514dba4054813.css'); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl('assets/css/style.min.css?v=9b5a929c0b'); ?>" rel="stylesheet">
+    <script src="<?php $this->options->themeUrl('assets/js-simple/jquery.min.js'); ?>"></script>
 
     <script async="" src="<?php $this->options->themeUrl('assets/js/analytics.js'); ?>" charset="utf8"></script>
-    <script src="<?php $this->options->themeUrl('assets/js/jquery.min.js'); ?>"></script>
     <?php if($this->options->userHeader) $this->options->userHeader(); ?>
 
     <style>

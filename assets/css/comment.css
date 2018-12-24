@@ -469,6 +469,13 @@ a.gitment-header-issue-link:hover {
     padding-left: 60px;
     margin: 19px 0;
 }
+
+.gitment-editor-container-left {
+    position: relative;
+    min-height: 60px;
+    /*padding-left: 60px;*/
+    margin: 19px 0;
+}
 .gitment-comment-avatar,
 .gitment-editor-avatar {
     float: left;
@@ -561,6 +568,7 @@ a.gitment-comment-name:visited {
     user-select: none;
 
     outline: none;
+    border: 1px solid;
 }
 .gitment-editor-tab.gitment-selected {
     color: #333;

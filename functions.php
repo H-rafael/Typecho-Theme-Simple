@@ -595,7 +595,7 @@ function commentAtContent($coid)
         $arow = $db->fetchRow($db->select('author')->from('table.comments')
             ->where('coid = ? AND status = ?', $parent, 'approved'));
         $author = $arow['author'];
-        $href = '<p><a href="#comment-' . $parent . '">@' . $author . '</a><br>';
+        $href = '<p><a  href="#comment-' . $parent . '">@' . $author . '</a> ';
         return $href;
     } else {
         return '';

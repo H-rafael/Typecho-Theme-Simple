@@ -27,7 +27,7 @@
 
     <link href="<?php $this->options->themeUrl('assets/css/app.c64eadfc8d3abfc9d85514dba4054813.css'); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl('assets/css/style.min.css?v=9b5a929c0b'); ?>" rel="stylesheet">
-    <script src="<?php $this->options->themeUrl('assets/js-simple/jquery.min.js'); ?>"></script>
+    <script src="<?php $this->options->themeUrl('assets/js/jquery.min.js'); ?>"></script>
     <link href="<?php $this->options->themeUrl('assets/css/prism.css'); ?>" rel="stylesheet" />
     <script src="<?php $this->options->themeUrl('assets/js/prism.js'); ?>"></script>
 
@@ -58,16 +58,16 @@
             <div data-v-26df1257="" class="main-menu el-row el-row--flex">
                 <div data-v-26df1257="" class="el-col el-col-24 el-col-xs-24 el-col-sm-0">
                     <div data-v-26df1257="" class="el-dropdown">
-                        <button data-v-26df1257="" type="button" class="el-button el-button--text el-button--small el-dropdown-selfdefine" onclick="menu_select(1)" aria-haspopup="list" aria-controls="dropdown-menu-1812" role="button" tabindex="0">
-                         <span>
+                        <button data-v-26df1257="" type="button" class="el-button el-button--text el-button--small el-dropdown-selfdefine" onclick="menu_select(1)">
+                            <span>
                              <div data-v-26df1257="" class="menu-btn">
                                  <span data-v-26df1257=""><i data-v-26df1257="" aria-hidden="true" class="fa fa-bars"></i></span>
-                                 <span data-v-26df1257="">Menu</span>
+                                 <span data-v-26df1257=""   >Menu</span>
                              </div>
                          </span>
                         </button>
 
-                        <ul data-v-26df1257="" class="el-dropdown-menu el-popper el-dropdown-menu--small" id="dropdown-menu-5411" style="position: fixed;top: 36px;left: 5px;transform-origin: center top 0px;z-index: 2000; display: none" x-placement="bottom-end">
+                        <ul data-v-26df1257="" class="el-dropdown-menu el-popper el-dropdown-menu--small " id="dropdown-menu-5411" style="position: fixed;top: 36px;left: 5px;transform-origin: center top 0px;z-index: 99999; display:none" x-placement="bottom-end">
                             <?php $slugs = getPermalinkFromSlug();showNav(0,$slugs); ?>
                             <div x-arrow="" class="popper__arrow" style="left: 29.2422px;"></div>
                         </ul>

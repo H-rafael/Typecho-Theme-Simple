@@ -17,6 +17,7 @@
 </div>
 <script>
     function menu_select(sign) {
+
         if($('#dropdown-menu-5411').is(':hidden')){//如果当前隐藏
             $('#dropdown-menu-5411').show();//那么就显示div
         }else{//否则
@@ -25,8 +26,6 @@
     }
 
 </script>
-<!--<script src="--><?php //$this->options->themeUrl('assets/js-simple/main.min.js?v=f083046d90'); ?><!--"></script>-->
-
 <?php if($this->options->statistics) $this->options->statistics(); ?>
 <?php $this->footer(); ?>
 </body>

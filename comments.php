@@ -5,7 +5,7 @@
         margin: 0
     }
 .gitment-comments-list{
-    width: 92%;
+    /*width: 92%;*/
     margin-left: 59px;
 }
     .comment-reply a{
@@ -48,12 +48,6 @@ function threadedComments($comments, $options) {
                     <span><?php echo parseUserAgent($comments->agent); ?></span>
                 <?php endif; ?>
                 <span class="comment-reply" style="float:right"><?php $comments->reply('<i class="iconfont icon-aria-reply"></i>'); ?></span>
-
-
-                <div class="gitment-comment-like-btn">
-                    <svg class="gitment-heart-icon">
-                    </svg>
-                </div>
             </div>
             <div class="gitment-comment-body gitment-markdown">
                 <?php showCommentContent($comments->coid); ?>
@@ -162,9 +156,9 @@ function threadedComments($comments, $options) {
         <div id="comment-footer">
             <div class="OwO">
             </div><!--end .OwO-->
-            <div class="comment-image">
-                <span><i class="iconfont icon-aria-picture"></i>图片</span>
-            </div>
+<!--            <div class="comment-image">-->
+<!--                <span><i class="iconfont icon-aria-picture"></i>图片</span>-->
+<!--            </div>-->
             <?php if(isEnabled('useCommentToMail','AriaConfig')): ?>
                 <div id="comment-ban-mail" class="ui toggle checkbox">
                     <input name="banmail" type="checkbox" value="stop">

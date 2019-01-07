@@ -1527,9 +1527,9 @@ width: 100%
 /*position: relative*/
 /*}*/
 
-/*#nav-btns #nav-menu-btn,#search-box,.nav-sub {*/
-/*display: none*/
-/*}*/
+#nav-btns #nav-menu-btn,#search-box,.nav-sub {
+display: none
+}
 
 /*#nav-right a {*/
 /*margin: 0 5px*/
@@ -1639,23 +1639,23 @@ width: 100%
 /*border-radius: 50%*/
 /*}*/
 
-/*.close {*/
-/*position: absolute;*/
-/*right: 0;*/
-/*top: 0*/
-/*}*/
+.close {
+position: absolute;
+right: 0;
+top: 0
+}
 
-/*#go-top,#search-box,.headroom {*/
-/*position: fixed*/
-/*}*/
+#go-top,#search-box,.headroom {
+position: fixed
+}
 
-/*.close:hover {*/
-/*cursor: pointer*/
-/*}*/
+.close:hover {
+cursor: pointer
+}
 
-/*#nav-vertical>.close>i {*/
-/*font-size: 2rem*/
-/*}*/
+#nav-vertical>.close>i {
+font-size: 2rem
+}
 
 /*.nav-vertical-list {*/
 /*list-style: none;*/
@@ -1678,63 +1678,63 @@ width: 100%
 /*margin: 10px 0 10px 40px*/
 /*}*/
 
-/*#search-button,#search-text {*/
-/*margin: 0;*/
-/*padding: 0;*/
-/*height: 80px;*/
-/*vertical-align: middle*/
-/*}*/
+#search-button,#search-text {
+margin: 0;
+padding: 0;
+height: 80px;
+vertical-align: middle
+}
 
 /*.vertical-sub-item,.vertical-sub-item i {*/
 /*font-size: 1.2rem*/
 /*}*/
 
-/*#search-box {*/
-/*z-index: 1000;*/
-/*width: 100%;*/
-/*height: 100%;*/
-/*justify-content: center;*/
-/*align-items: Center*/
-/*}*/
+#search-box {
+z-index: 1000;
+width: 100%;
+height: 100%;
+justify-content: center;
+align-items: Center
+}
 
-/*#search-box>form {*/
-/*position: absolute;*/
-/*background-color: #fff*/
-/*}*/
+#search-box>form {
+position: absolute;
+background-color: #fff
+}
 
-/*#search-box>.close {*/
-/*right: .3rem;*/
-/*top: .3rem;*/
-/*left: initial*/
-/*}*/
+#search-box>.close {
+right: .3rem;
+top: .3rem;
+left: initial
+}
 
-/*#search-box>.close>i {*/
-/*font-size: 2.5rem*/
-/*}*/
+#search-box>.close>i {
+font-size: 2.5rem
+}
 
-/*#search-text {*/
-/*text-align: center;*/
-/*width: 420px;*/
-/*line-height: 64px;*/
-/*font-size: 32px;*/
-/*border-radius: 10px;*/
-/*background-color: rgba(255,255,255,.05);*/
-/*box-shadow: 0 0 4px 0 #939090*/
-/*}*/
+#search-text {
+text-align: center;
+width: 420px;
+line-height: 64px;
+font-size: 32px;
+border-radius: 10px;
+background-color: rgba(255,255,255,.05);
+box-shadow: 0 0 4px 0 #939090
+}
 
-/*#search-button:hover {*/
-/*cursor: pointer*/
-/*}*/
+#search-button:hover {
+cursor: pointer
+}
 
-/*#search-button {*/
-/*width: 80px;*/
-/*opacity: .6*/
-/*}*/
+#search-button {
+width: 80px;
+opacity: .6
+}
 
-/*#search-button,#search-text {*/
-/*border: none;*/
-/*outline: 0*/
-/*}*/
+#search-button,#search-text {
+border: none;
+outline: 0
+}
 
 /*#header {*/
 /*height: 100vh;*/
@@ -3101,27 +3101,27 @@ position: absolute
 /*}*/
 /*}*/
 
-/*@media (max-width:768px) and (min-width:450px) {*/
-/*#search-box {*/
-/*background-size: 40%!important*/
-/*}*/
+@media (max-width:768px) and (min-width:450px) {
+#search-box {
+background-size: 40%!important
+}
 
-/*#search-img {*/
-/*width: 32px;*/
-/*height: 32px*/
-/*}*/
+#search-img {
+width: 32px;
+height: 32px
+}
 
-/*#search-text {*/
-/*width: 200px;*/
-/*height: 50px;*/
-/*line-height: 50px*/
-/*}*/
+#search-text {
+width: 200px;
+height: 50px;
+line-height: 50px
+}
 
-/*#search-button {*/
-/*height: 55px;*/
-/*width: 55px*/
-/*}*/
-/*}*/
+#search-button {
+height: 55px;
+width: 55px
+}
+}
 
 /*@media (max-width:450px) and (min-width:425px) {*/
 /*#site-name {*/
@@ -3168,34 +3168,34 @@ position: absolute
 background-size: 100px 100px
 }
 
-/*#go-top {*/
-/*right: 15px*/
-/*}*/
+#go-top {
+right: 15px
+}
 
-/*#search-box>form {*/
-/*min-width: 190px*/
-/*}*/
+#search-box>form {
+min-width: 190px
+}
 
-/*#search-box {*/
-/*background-size: 60%!important*/
-/*}*/
+#search-box {
+background-size: 100%!important
+}
 
-/*#search-img {*/
-/*width: 32px;*/
-/*height: 32px*/
-/*}*/
+#search-img {
+width: 32px;
+height: 32px
+}
 
-/*#search-text {*/
-/*width: 150px;*/
-/*height: 40px;*/
-/*line-height: 40px;*/
-/*font-size: 14px*/
-/*}*/
+#search-text {
+width: 200px;
+height: 40px;
+line-height: 40px;
+font-size: 14px
+}
 
-/*#search-button {*/
-/*height: 30px;*/
-/*width: 30px*/
-/*}*/
+#search-button {
+height: 30px;
+width: 30px
+}
 
 /*.post-other i {*/
 /*font-size: 35px*/

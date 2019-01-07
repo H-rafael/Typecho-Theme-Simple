@@ -135,7 +135,7 @@ EOF;
         {
             "text":"关于",
             "href":"#",
-            "icon":"iconfont icon-aria-about"
+            "icon":"fa fa-smile-o"
         }',
         _t('导航栏配置'),
         _t('输入导航栏的配置信息')

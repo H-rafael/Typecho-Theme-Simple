@@ -2,6 +2,13 @@
 <?php
 /**
  *  由心而发，简单的
+ *
+ * <a href="https://github.com/H-rafael/Typecho-Theme-Simple" target="_blank">Github</a> | <a href="http://qqexit.com/" target="_blank">Home</a>
+ *
+ * @package Simple
+ * @author  Kiln
+ * @version 1.1.0
+ * @link http://qqexit.com/index.php/archives/23/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -16,8 +23,10 @@ $this->need('header.php');
         <div data-v-0759750a="" class="comments">
             <div data-v-0759750a="" class="gitment">
                 <div data-v-0759750a="" id="lite-gitment-root">
-                    <div lang="en-US" class="gitment-container gitment-root-container">
-                        <?php $this->content(); ?>
+                    <div lang="en-US" class="gitment-container gitment-root-container ">
+                        <div class="post-content">
+                            <?php $this->content(); ?>
+                        </div>
                         <div>
                             <div lang="en-US" class="gitment-container gitment-header-container">
                                 <span class="gitment-header-like-btn">

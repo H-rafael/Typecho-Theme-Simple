@@ -586,6 +586,14 @@ class Shortcode
      */
     public static function shortcode_linkitem($atts, $content = '')
     {
+
+        //        <ul id="hexGrid">
+//            <li class="hex">
+//                <a class="hexIn" href="#"> <img src="http://animtv.cn/anim_wo/html/user_img/img_3172.jpg" alt="" />
+//                    <h1>虫洞洞</h1>
+//                    <p>Some sample text about the article this hexagon leads to</p>
+//                </a>
+//            </li></ul>
         $args = shortcode_atts(array(
             'href' => '',
             'title' => '',
@@ -593,12 +601,16 @@ class Shortcode
             'name' => '',
         ), $atts);
         $href = $args['href'] ? 'href="'.$args['href'].'"' : "";
-        return '<a '. $href .'title="' . $args['title'] . '" target="_blank"><div class="link-item"><img class="link-avatar" src="' . $args['img'] . '"><span class="link-name">' . $args['name'] . '</span></div></a>';
+//        return '<a '. $href .'title="' . $args['title'] . '" target="_blank"><div class="link-item"><img class="link-avatar" src="' . $args['img'] . '"><span class="link-name">' . $args['name'] . '</span></div></a>';
+
+        return '<li class="hex"><a class="hexIn" '.$href.' title="' . $args['title'] . '"  target="_blank"> <img class="link-avatar" src="' . $args['img'] . '"><div id="h1">' . $args['name'] . '</div><span>' . $args['title'] . '</span></a></li>';
+//        return '<a '. $href .' title="' . $args['title'] . '" target="_blank"><div class="link-item"><img class="link-avatar" src="' . $args['img'] . '"><span class="link-name">' . $args['name'] . '</span></div></a>';
     }
 
     public static function shortcode_linkbox($atts, $content = '')
     {
-        return '<div class="link-box">' . do_shortcode($content) . '</div>';
+//        return '<div class="link-box">' . do_shortcode($content) . '</div>';
+        return '<ul id="hexGrid" >' . do_shortcode($content) . '</ul>';
     }
     //[link-item]
 

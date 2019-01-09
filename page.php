@@ -21,41 +21,6 @@
                 <div data-v-0759750a="" id="lite-gitment-root">
                     <div lang="en-US" class="gitment-container gitment-root-container ">
                         <div class="post-content" >
-                            <ul style="display: none" id="hexGrid">
-                                <li class="hex">
-                                    <a class="hexIn" href="#"> <img src="http://animtv.cn/anim_wo/html/user_img/img_3172.jpg" alt="" />
-                                        <h1>虫洞洞</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a>
-                                </li>
-                                <li class="hex"> <a class="hexIn" href="#"> <img src="https://www.lshl.bid/usr/themes/Aria/assets/img/13(1).jpg" alt="" />
-                                        <h1>社会一小生</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a>
-                                </li>
-                                <li class="hex"> <a class="hexIn" href="#"> <img src="https://cn.gravatar.com/avatar/3e3ced017d84bded4545a1baca15be6a?d=mp&r=g&s=200" alt="" />
-                                        <h1>This is a title</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a> </li>
-                                <li class="hex"> <a class="hexIn" href="#"> <img src="https://ws2.sinaimg.cn/large/006Xmmmggy1fxr1rc9omfj30b40b474l.jpg" alt="" />
-                                        <h1>This is a title</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a> </li>
-                                <li class="hex"> <a class="hexIn" href="#"> <img src="https://ohmyga.net/usr/themes/CastleRV/others/img/headimg.png" alt="" />
-                                        <h1>This is a title</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a> </li>
-                                <li class="hex"> <a class="hexIn" href="#"> <img src="http://m.animtv.cn/images/slider/project_2.jpg" alt="" />
-                                        <h1>This is a title</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a> </li>
-                                <li class="hex">
-                                    <a class="hexIn" href="#"> <img src="<?php $this->options->themeUrl('assets/img/miku_img.jpg'); ?>" alt="" />
-                                        <h1>This is a title</h1>
-                                        <p>Some sample text about the article this hexagon leads to</p>
-                                    </a>
-                                </li>
-                            </ul>
                             <?php $this->content(); ?>
                         </div>
 

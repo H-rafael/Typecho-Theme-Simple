@@ -55,21 +55,17 @@
                         getBackground();
                 ?>
             ) 50% center / cover no-repeat fixed rgb(255, 255, 255);
-            /*background-size: cover;*/
-            z-index: -1;
-            background-size 100% 100%
-            /*position: relative;*/
         }
 
     </style>
 </head>
-<body id="app">
+<body >
 
 <ul data-v-26df1257="" class="el-dropdown-menu el-popper el-dropdown-menu--small " id="dropdown-menu-5411" style="position: fixed; top: 36px; left: 5px; transform-origin: center top 0px; z-index: 2000; display:none" x-placement="bottom-end">
     <?php $slugs = getPermalinkFromSlug();showNav(0,$slugs); ?>
     <div x-arrow="" class="popper__arrow" style="left: 29.2422px;"></div>
 </ul>
-<div data-v-75a8d7e8=""  style="">
+<div data-v-75a8d7e8="" id="app">
     <div data-v-26df1257="" data-v-75a8d7e8="" id="top-nav">
         <div data-v-26df1257="" class="blur top-left-padding" style="position: relative; z-index: 1; background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); overflow: hidden; height: 100%; width: 100%;">
             <div data-v-26df1257="" class="main-menu el-row el-row--flex">

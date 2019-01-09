@@ -1,56 +1,78 @@
-
 <?php
 /**
  *  由心而发，简单的
+ *
+ * <a href="https://github.com/H-rafael/Typecho-Theme-Simple" target="_blank">Github</a> | <a href="http://qqexit.com/" target="_blank">Home</a>
+ *
+ * @package Simple
+ * @author  Kiln
+ * @version 1.1.0
+ * @link http://qqexit.com/index.php/archives/23/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
+<style>
+    .active a{
+        color: #fff;
+    }
+</style>
 
-<section data-v-75a8d7e8="" class="app-body container app-dep-footer-body">
-    <div data-v-0759750a="" data-v-75a8d7e8="" class="detailable-page">
-        <h1 data-v-0759750a="" class="title"><span data-v-0759750a="">关于我</span></h1>
-        <p data-v-0759750a="" class="meta" style="display: none;"><span data-v-0759750a="" class="create-time">2016-03-14, 19:34:43</span></p>
-        <div data-v-0759750a="" class="comments">
-            <ul id="hexGrid">
-                <li class="hex">
-                    <a class="hexIn" href="#"> <img src="http://animtv.cn/anim_wo/html/user_img/img_3172.jpg" alt="" />
-                        <h1>虫洞洞</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                </li>
-                <li class="hex"> <a class="hexIn" href="#"> <img src="https://www.lshl.bid/usr/themes/Aria/assets/img/13(1).jpg" alt="" />
-                        <h1>社会一小生</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                </li>
-                <li class="hex"> <a class="hexIn" href="#"> <img src="https://cn.gravatar.com/avatar/3e3ced017d84bded4545a1baca15be6a?d=mp&r=g&s=200" alt="" />
-                        <h1>This is a title</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a> </li>
-                <li class="hex"> <a class="hexIn" href="#"> <img src="https://ws2.sinaimg.cn/large/006Xmmmggy1fxr1rc9omfj30b40b474l.jpg" alt="" />
-                        <h1>This is a title</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a> </li>
-                <li class="hex"> <a class="hexIn" href="#"> <img src="https://ohmyga.net/usr/themes/CastleRV/others/img/headimg.png" alt="" />
-                        <h1>This is a title</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a> </li>
-                <li class="hex"> <a class="hexIn" href="#"> <img src="http://m.animtv.cn/images/slider/project_2.jpg" alt="" />
-                        <h1>This is a title</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a> </li>
-                <li class="hex"> <a class="hexIn" href="#"> <img src="<?php $this->options->themeUrl('assets/img/miku_img.jpg'); ?>" alt="" />
-                        <h1>This is a title</h1>
-                        <p>Some sample text about the article this hexagon leads to</p>
-                    </a>
-                </li>
-            </ul>
+
+<section data-v-75a8d7e8="" class="app-body container_section app-dep-footer-body">
+    <div data-v-802392fc="" data-v-75a8d7e8="" id="home-page">
+        <div data-v-513e59b0="" class="search el-input el-input--small el-input-group el-input-group--prepend el-input--suffix" style="padding: 0px 0px 28px;">
+            <button autocomplete="off"  class="el-input__inner" style="font-size: 17px;">
+                <?php $this->archiveTitle(array(
+                    'category'  =>  _t('分类 %s 下的文章'),
+                    'search'    =>  _t('包含关键字 %s 的文章'),
+                    'tag'       =>  _t('标签 %s 下的文章'),
+                    'author'    =>  _t('%s 发布的文章')
+                ), '', ''); ?>
+            </button>
+            <p data-v-513e59b0="" class="search-result" style="text-align: center;"><i data-v-513e59b0="" aria-hidden="true" class="fa fa-smile-o"></i> <span data-v-513e59b0="">Laugh and laugh and you'll get by.</span></p>
         </div>
-        <button data-v-e739917e="" data-v-0759750a="" type="button" class="el-button eof el-button--text el-button--mini">
-            <span><i data-v-e739917e="" aria-hidden="true" class="fa fa-level-up"></i> <span data-v-e739917e="">EOF</span></span></button>
-        <div data-v-0759750a="" class="el-dialog__wrapper" style="display: none;">
+        <button data-v-802392fc="" type="button" class="el-button back el-button--default el-button--mini is-plain" style="display: none;">
+            <span><i data-v-802392fc="" aria-hidden="true" class="fa fa-undo"></i> <span data-v-802392fc="">Back</span></span></button>
+        <div data-v-802392fc="" class="article-card-list">
+            <?php while($this->next()): ?>
+                <div data-v-e8c9ac44="" data-v-802392fc="" class="article-card">
+                    <h1 data-v-e8c9ac44="" class="title"><a data-v-e8c9ac44="" href="<?php $this->permalink() ?>" class=""><span data-v-e8c9ac44=""><?php $this->sticky(); $this->title() ?></span></a></h1>
+                    <p data-v-e8c9ac44="" class="meta"><span data-v-e8c9ac44="" class="create-time"><?php $this->category(' ',true,'无'); ?> <?php $this->date('F jS, Y'); ?></span></p>
+                    <div data-v-e8c9ac44="" class="box cover">
+                        <a href="<?php $this->permalink() ?>">
+                            <div data-v-e8c9ac44="" class="photo-wrapper" style="
+                                    background: url(
+                            <?php if($this->fields->thumbnail)
+                                $this->fields->thumbnail();
+                            else
+                                echo getThumbnail();
+                            ?>);
+                                    background-position: center center;
+                                    background-size: cover;"></div>
+                        </a>
+                    </div>
+                    <article data-v-e8c9ac44="" id="detailable-content">
+                        <?php
+                        if($this->fields->previewContent)
+                            $this->fields->previewContent();
+                        else
+                            $this->excerpt(80, '...');
+                        ?>
+                    </article>
+                    <div data-v-e8c9ac44="" class="categories-and-tags">
+                    </div>
+                    <a data-v-e8c9ac44=""  href="<?php $this->permalink() ?>" class="el-button more el-button--primary el-button--mini">
+                        More </a>
+                </div>
+            <?php endwhile; ?>
+        </div>
+        <div data-v-802392fc="" class="pagination el-pagination el-pagination--small">
+            <?php $this->pageNav('<', '>',1,'...',array('wrapTag' => 'ul', 'wrapClass' => 'el-pager','itemTag' => 'li','currentClass' => 'number active')); ?>
+        </div>
+
+        <div data-v-802392fc="" class="el-dialog__wrapper" style="display: none;">
             <div class="el-dialog" style="width: min-content; margin-top: 15vh;">
                 <div class="el-dialog__header">
                     <span class="el-dialog__title"></span>
@@ -60,4 +82,5 @@ $this->need('header.php');
         </div>
     </div>
 </section>
+
 <?php $this->need('footer.php'); ?>

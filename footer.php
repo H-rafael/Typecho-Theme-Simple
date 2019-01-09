@@ -15,9 +15,8 @@
     </div>
 </footer>
 </div>
-<script type="text/javascript">
+<script>
     function menu_select(sign) {
-
         if($('#dropdown-menu-5411').is(':hidden')){//如果当前隐藏
             $('#dropdown-menu-5411').show();//那么就显示div
         }else{//否则
@@ -25,36 +24,6 @@
         }
     }
 
-    $(function () {
-        $("#search-box").css("display") && $("#search-box").css("display", "none");
-        $("#nav-search-btn").on("click", function() {
-            $("#search-box").css("display", "flex");
-            $("#search-box").animateCss("zoomIn", function(t) {})
-        });
-        $("#search-box>.close").on("click", function() {
-            $("#search-box").hide()
-        })
-    })
-
-    $.fn.extend({
-        animateCss: function(t, n) {
-            var e = function(t) {
-                var n = {
-                    animation: "animationend",
-                    OAnimation: "oAnimationEnd",
-                    MozAnimation: "mozAnimationEnd",
-                    WebkitAnimation: "webkitAnimationEnd"
-                };
-                for (var e in n) if (void 0 !== t.style[e]) return n[e]
-            } (document.createElement("div"));
-            return this.addClass("animated " + t).one(e,
-                function() {
-                    $(this).removeClass("animated " + t),
-                    "function" == typeof n && n($(this))
-                }),
-                this
-        }
-    })
 </script>
 <?php if($this->options->statistics) $this->options->statistics(); ?>
 <?php $this->footer(); ?>

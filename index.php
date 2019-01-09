@@ -1,23 +1,11 @@
 <?php
 /**
  *  由心而发，简单的
- *
- * <a href="https://github.com/H-rafael/Typecho-Theme-Simple" target="_blank">Github</a> | <a href="http://qqexit.com/" target="_blank">Home</a>
- *
- * @package Simple
- * @author  Kiln
- * @version 1.1.0
- * @link http://qqexit.com/index.php/archives/23/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-<style>
-    .active a{
-        color: #fff;
-    }
-</style>
 <section data-v-75a8d7e8="" class="app-body container_section app-dep-footer-body">
     <div data-v-802392fc="" data-v-75a8d7e8="" id="home-page">
         <button data-v-802392fc="" type="button" class="el-button back el-button--default el-button--mini is-plain" style="display: none;">
@@ -57,9 +45,9 @@ $this->need('header.php');
             <?php endwhile; ?>
         </div>
         <div data-v-802392fc="" class="pagination el-pagination el-pagination--small">
-<!--            --><?php //$this->pageNav('<', '>',1,'...',array('wrapTag' => 'ul', 'wrapClass' => '','itemTag' => 'li','currentClass' => 'page-current',)); ?>
+            <?php $this->pageNav('<', '>',1,'...',array('wrapTag' => 'ul', 'wrapClass' => '','itemTag' => 'li','currentClass' => 'page-current',)); ?>
 
-            <?php $this->pageNav('<', '>',1,'...',array('wrapTag' => 'ul', 'wrapClass' => 'el-pager','itemTag' => 'li','currentClass' => 'number active')); ?>
+<!--            --><?php //$this->pageNav('<', '>',1,'...',array('wrapTag' => 'ul', 'wrapClass' => 'el-pager','itemTag' => 'li','currentClass' => 'number active')); ?>
         </div>
 
         <div data-v-802392fc="" class="el-dialog__wrapper" style="display: none;">

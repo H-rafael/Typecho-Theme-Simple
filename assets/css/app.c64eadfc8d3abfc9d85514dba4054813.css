@@ -3235,10 +3235,10 @@ article,aside,footer,header,nav,section {
     display: block
 }
 
-/*h1 {*/
-    /*font-size: 2em;*/
-    /*margin: .67em 0*/
-/*}*/
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
 
 figcaption,figure,main {
     display: block

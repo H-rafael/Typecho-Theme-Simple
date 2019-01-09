@@ -3,18 +3,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) {
     exit;
 }
 
-/**
- *  由心而发，简单的
- *
- * <a href="https://github.com/H-rafael/Typecho-Theme-Simple" target="_blank">Github</a> | <a href="http://qqexit.com/" target="_blank">Home</a>
- *
- * @package Simple
- * @author  Kiln
- * @version 1.1.0
- * @link http://qqexit.com/index.php/archives/23/
- */
-
-define('ARIA_VERSION', '1.1.0');
+define('ARIA_VERSION', '1.8.2');
+//print_r(Helper::options());
+//var_dump(Helper::options()->gravatarPrefix);
 define('__TYPECHO_GRAVATAR_PREFIX__', Helper::options()->gravatarPrefix ? Helper::options()->gravatarPrefix : 'https://cn.gravatar.com/avatar/');
 
 require_once 'lib/Shortcode.php';
@@ -64,14 +55,12 @@ function themeConfig($form)
     .multiline input:focus:checked ~ .box,.multiline input:focus:checked ~ label{color:rgba(0,0,0,0.95) !important}
     .multiline input:focus:checked ~ .box:before,.multiline input:focus:checked ~ label:before{background-color:#0d71bb !important}
     </style>
-    <!--<script>var r=new XMLHttpRequest();var updating=function(dom){var i=document.createElement("i");i.className="loading";dom.prepend(i)};var checkUpdate=function(dom){updating(dom);try{r.open("GET","https://raw.githubusercontent.com/Siphils/Typecho-Theme-Aria/master/version.json",true);r.send();r.onreadystatechange=function(){if(r.readyState===4){if(r.status==200){try{var d=JSON.parse(r.responseText)}catch(e){}if(d.version==ARIA_VERSION.trim()){dom.className+=" confirm";dom.style.paddingLeft="2em";dom.textContent="已经为最新版";var i=document.createElement("i");i.className="confirm";dom.prepend(i)}else{dom.className+=" alert";dom.style.paddingLeft="2em";dom.textContent="检查到新版本：";var i=document.createElement("i");i.className="alert";dom.prepend(i);if(typeof document.getElementById('update-info')==='undefined'||document.getElementById('update-info')===null){var log=document.createElement('div');log.id='update-info';log.classList.add('tip');log.innerHTML='<ul><li>新版本：'+d.version+'</li><li>更新日志：<a href="'+d.changeLog+'" target="_blank">changeLog</a></li><li>使用帮助：<a href="'+d.wiki+'" target="_blank">Wiki</a></li></ul>';Array.prototype.slice.call(document.getElementsByClassName('tip')).pop().after(log)}}}else{dom.textContent="请求失败！错误码："+r.status}}}}catch(e){dom.textContent="请求失败，请稍后重试！"+e}document.getElementsByTagName("button")[1].onclick=function(e){updating(e.target)}};window.onload=function(){checkUpdate(document.getElementById('check-update'))}</script>-->
+    <script>var r=new XMLHttpRequest();var updating=function(dom){var i=document.createElement("i");i.className="loading";dom.prepend(i)};var checkUpdate=function(dom){updating(dom);try{r.open("GET","https://raw.githubusercontent.com/Siphils/Typecho-Theme-Aria/master/version.json",true);r.send();r.onreadystatechange=function(){if(r.readyState===4){if(r.status==200){try{var d=JSON.parse(r.responseText)}catch(e){}if(d.version==ARIA_VERSION.trim()){dom.className+=" confirm";dom.style.paddingLeft="2em";dom.textContent="已经为最新版";var i=document.createElement("i");i.className="confirm";dom.prepend(i)}else{dom.className+=" alert";dom.style.paddingLeft="2em";dom.textContent="检查到新版本：";var i=document.createElement("i");i.className="alert";dom.prepend(i);if(typeof document.getElementById('update-info')==='undefined'||document.getElementById('update-info')===null){var log=document.createElement('div');log.id='update-info';log.classList.add('tip');log.innerHTML='<ul><li>新版本：'+d.version+'</li><li>更新日志：<a href="'+d.changeLog+'" target="_blank">changeLog</a></li><li>使用帮助：<a href="'+d.wiki+'" target="_blank">Wiki</a></li></ul>';Array.prototype.slice.call(document.getElementsByClassName('tip')).pop().after(log)}}}else{dom.textContent="请求失败！错误码："+r.status}}}}catch(e){dom.textContent="请求失败，请稍后重试！"+e}document.getElementsByTagName("button")[1].onclick=function(e){updating(e.target)}};window.onload=function(){checkUpdate(document.getElementById('check-update'))}</script>
 EOF;
     echo '<div class="tip"><span class="current-ver"><strong><code>Ver ' . ARIA_VERSION . '</code></strong></span>
-    <div class="tip-header"><h1>Typecho-Theme-Simple</h1></div>
-    <p>感谢选择使用 <code>Simple</code> </p>
-    <p>查看<a href="https://github.com/H-rafael/Typecho-Theme-Simple">帮助手册</a>
-     <a href="https://github.com/H-rafael/Typecho-Theme-Simple/issues">issue</a> <a href="https://github.com/H-rafael/Typecho-Theme-Simple/pulls">PR</a>
-     </p>
+    <div class="tip-header"><h1>Typecho-Theme-Aria</h1></div>
+    <p>感谢选择使用 <code>Aria</code> </p>
+    <p>查看<a href="https://github.com/Siphils/Typecho-Theme-Aria/blob/master/README.md#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">帮助手册</a> <a href="https://github.com/Siphils/Typecho-Theme-Aria/issues">issue</a> <a href="https://github.com/Siphils/Typecho-Theme-Aria/pulls">PR</a></p>
     <p><button id="check-update" onClick="checkUpdate(this);" class="btn primary" style="position:absolute;right:5px;bottom:5px;">检查更新</button></p>
 </div>';
 
@@ -135,7 +124,7 @@ EOF;
         {
             "text":"关于",
             "href":"#",
-            "icon":"fa fa-smile-o"
+            "icon":"iconfont icon-aria-about"
         }',
         _t('导航栏配置'),
         _t('输入导航栏的配置信息')
@@ -151,12 +140,12 @@ EOF;
 
     $AriaConfig = new Typecho_Widget_Helper_Form_Element_Checkbox('AriaConfig',
         array(
-//            'showHitokoto' => '页面底部显示一言',
-//            'usePjax' => '开启PJAX(需要关闭评论反垃圾保护)',
-//            'useAjaxComment' => '开启AJAX评论',
-//            'useFancybox' => '文章/评论图片使用<a href="http://fancyapps.com" target="_blank">fancybox</a>',
-//            'useLazyload' => '开启图片懒加载<a href="https://appelsiini.net/projects/lazyload" target="_blank">lazyload</a>',
-//            'showQRCode' => '文章底部显示本文链接二维码',
+            'showHitokoto' => '页面底部显示一言',
+            'usePjax' => '开启PJAX(需要关闭评论反垃圾保护)',
+            'useAjaxComment' => '开启AJAX评论',
+            'useFancybox' => '文章/评论图片使用<a href="http://fancyapps.com" target="_blank">fancybox</a>',
+            'useLazyload' => '开启图片懒加载<a href="https://appelsiini.net/projects/lazyload" target="_blank">lazyload</a>',
+            'showQRCode' => '文章底部显示本文链接二维码',
             'useCommentToMail' => '评论邮件回复按钮（需要配合<a href="https://9sb.org/58">CommentToMail</a>使用）',
             'showCommentUA' => '评论显示UserAgent（显示操作系统和浏览器信息）',
         ),
@@ -606,7 +595,7 @@ function commentAtContent($coid)
         $arow = $db->fetchRow($db->select('author')->from('table.comments')
             ->where('coid = ? AND status = ?', $parent, 'approved'));
         $author = $arow['author'];
-        $href = '<p><a  href="#comment-' . $parent . '">@' . $author . '</a> ';
+        $href = '<p><a href="#comment-' . $parent . '">@' . $author . '</a><br>';
         return $href;
     } else {
         return '';

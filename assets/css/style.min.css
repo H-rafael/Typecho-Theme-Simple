@@ -3086,20 +3086,20 @@ position: absolute
 /*}*/
 /*}*/
 
-/*@media (max-width:768px) {*/
-/*#header {*/
-/*height: 60vh*/
-/*}*/
+@media (max-width:768px) {
+#header {
+height: 60vh
+}
 
-/*#comment-info {*/
-/*display: block;*/
-/*width: 100%*/
-/*}*/
+#comment-info {
+display: block;
+width: 100%
+}
 
-/*#comment-form .comment-input {*/
-/*width: 100%*/
-/*}*/
-/*}*/
+#comment-form .comment-input {
+width: 100%
+}
+}
 
 @media (max-width:768px) and (min-width:450px) {
 #search-box {

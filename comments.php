@@ -169,7 +169,7 @@ function threadedComments($comments, $options) {
             <?php endif; ?>
         </div>
         <center>
-            <button type="submit" class="submit"><i class="iconfont icon-aria-submit"></i> 发射</button>
+            <button type="submit" class="submit"><i class="iconfont icon-aria-submit"></i> 一言既出</button>
         </center>
     </form>
 </div>

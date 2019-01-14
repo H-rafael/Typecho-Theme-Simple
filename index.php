@@ -1,9 +1,7 @@
 <?php
 /**
  *  由心而发，简单的
- *
  * <a href="https://github.com/H-rafael/Typecho-Theme-Simple" target="_blank">Github</a> | <a href="http://qqexit.com/" target="_blank">Home</a>
- *
  * @package Simple
  * @author  Kiln
  * @version 1.1.0

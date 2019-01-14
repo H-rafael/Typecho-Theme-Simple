@@ -479,11 +479,9 @@ function getfooterWidget()
 {
     $data = convertConfigData('footerWidget', true);
     $opt = Helper::options();
-//    $html = '<span><a href="' . $opt->siteUrl . '"> • ' . $opt->title . '</a></span><span><a href="http:\/\/www.typecho.org" title="念念不忘，必有回响。" target="_blank"> Typecho Theme Lite</a></span><span><a href="https:\/\/eriri.ink/archives/Typecho-Theme-Aria.html" title="Typecho-Theme-Aria Ver ' . ARIA_VERSION . ' by Siphils" target="_blank"> • Aria</a></span>';
-
     $html = ' <a data-v-d81624e6="" class="powered-by" href="http:\/\/www.typecho.org" title="念念不忘，必有回响。" target="_blank">  • Typecho Theme Lite</a>
         <a href="' . $opt->siteUrl . '" data-v-d81624e6="" class="subtitle"> • '.$opt->title .'</a>
-        <a href="https:\/\/eriri.ink/archives/Typecho-Theme-Aria.html" data-v-d81624e6="" class="subtitle" title="Typecho-Theme-Simple Ver ' . ARIA_VERSION . ' by 砍柴人"> • Simple</a>
+        <a href="http://qqexit.com/index.php/archives/23.html" data-v-d81624e6="" class="subtitle" title="Typecho-Theme-Simple Ver ' . ARIA_VERSION . ' by 砍柴人"> • Simple</a>
         ';
 
     if (!$data) {

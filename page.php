@@ -43,18 +43,10 @@
         </div>
 
         <button data-v-e739917e="" data-v-0759750a="" type="button" class="el-button eof el-button--text el-button--mini">
-            <!---->
-            <!----><span><i data-v-e739917e="" aria-hidden="true" class="fa fa-level-up"></i> <span data-v-e739917e="">EOF</span></span></button>
-        <div data-v-0759750a="" class="el-dialog__wrapper" style="display: none;">
-            <div class="el-dialog" style="width: min-content; margin-top: 15vh;">
-                <div class="el-dialog__header">
-                    <span class="el-dialog__title"></span>
-                    <button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button>
-                </div>
-                <!---->
-                <!---->
-            </div>
-        </div>
+            <span><i data-v-e739917e="" aria-hidden="true" class="fa fa-level-up"></i>
+              <a data-v-e739917e=""  href="#top">EOF</a>
+            </span>
+        </button>
     </div>
 </section>
 <?php $this->need('footer.php'); ?>

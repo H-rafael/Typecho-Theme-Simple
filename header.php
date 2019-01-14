@@ -27,6 +27,7 @@
     <link href="<?php $this->options->themeUrl('assets/css/style_index.css'); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl('assets/css/iconfont.css'); ?>" rel="stylesheet" >
     <link href="<?php $this->options->themeUrl('assets/css/hexagons.css'); ?>" rel="stylesheet" >
+    <link href="<?php $this->options->themeUrl('assets/OwO/OwO.min.css'); ?>" rel="stylesheet" >
 
     <link href="<?php $this->options->themeUrl('assets/css/app.c64eadfc8d3abfc9d85514dba4054813.css'); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl('assets/css/style.min.css?v=9b5a929c0b'); ?>" rel="stylesheet">
@@ -59,13 +60,14 @@
 
     </style>
 </head>
-<body >
-
+<?php AriaConfig(); ?>
+<body>
 <ul data-v-26df1257="" class="el-dropdown-menu el-popper el-dropdown-menu--small " id="dropdown-menu-5411" style="position: fixed; top: 36px; left: 5px; transform-origin: center top 0px; z-index: 2000; display:none" x-placement="bottom-end">
     <?php $slugs = getPermalinkFromSlug();showNav(0,$slugs); ?>
     <div x-arrow="" class="popper__arrow" style="left: 29.2422px;"></div>
 </ul>
 <div data-v-75a8d7e8="" id="app">
+    <a name="top"></a>
     <div data-v-26df1257="" data-v-75a8d7e8="" id="top-nav">
         <div data-v-26df1257="" class="blur top-left-padding" style="position: relative; z-index: 1; background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); overflow: hidden; height: 100%; width: 100%;">
             <div data-v-26df1257="" class="main-menu el-row el-row--flex">

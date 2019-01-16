@@ -390,9 +390,9 @@
     cursor: pointer;
     text-decoration: none;
 }
-.gitment-container a:hover {
-    text-decoration: underline;
-}
+/*.gitment-container a:hover {*/
+    /*text-decoration: underline;*/
+/*}*/
 .gitment-container .gitment-hidden {
     display: none;
 }
@@ -944,10 +944,10 @@ a.gitment-editor-footer-tip:hover {
     font-size: inherit;
     line-height: inherit;
 }
-.gitment-markdown a {
-    color: #0366d6;
-    text-decoration: none;
-}
+/*.gitment-markdown a {*/
+    /*color: #0366d6;*/
+    /*text-decoration: none;*/
+/*}*/
 .gitment-markdown a:hover {
     text-decoration: underline;
 }
@@ -1356,7 +1356,12 @@ a.gitment-editor-footer-tip:hover {
 #lite-gitment-root .gitment-container {
     font-family: "Proxima Nova Rg", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif !important;
 }
-#lite-gitment-root .gitment-container a {
+/*#lite-gitment-root .gitment-container a {*/
+    /*color: #5c5c5c;*/
+    /*text-decoration: underline;*/
+/*}*/
+
+.gitment-markdown p a {
     color: #5c5c5c;
     text-decoration: underline;
 }

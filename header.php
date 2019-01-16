@@ -20,8 +20,7 @@
         ), '', ' - '); ?><?php $this->options->title(); ?> - <?php $this->options->description(); ?></title>
 
     <!-- 使用url函数转换相关路径 -->
-<!--    <link href="--><?php //$this->options->themeUrl('assets/css/jquery.fancybox.min.css'); ?><!--" rel="stylesheet">-->
-
+    <link href="<?php $this->options->themeUrl('assets/css/base-style.css'); ?>" rel="stylesheet">
     <link href="<?php $this->options->themeUrl('assets/css/comment.css'); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl('assets/css/style_01.css'); ?>" rel="stylesheet" />
     <link href="<?php $this->options->themeUrl('assets/css/style_index.css'); ?>" rel="stylesheet" />

@@ -10,11 +10,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) {
  *
  * @package Simple
  * @author  Kiln
- * @version 1.1.0
+ * @version 1.2.0
  * @link http://qqexit.com/index.php/archives/23/
  */
 
-define('ARIA_VERSION', '1.1.0');
+define('ARIA_VERSION', '1.2.0');
 define('__TYPECHO_GRAVATAR_PREFIX__', Helper::options()->gravatarPrefix ? Helper::options()->gravatarPrefix : 'https://cn.gravatar.com/avatar/');
 
 require_once 'lib/Shortcode.php';
@@ -64,7 +64,7 @@ function themeConfig($form)
     .multiline input:focus:checked ~ .box,.multiline input:focus:checked ~ label{color:rgba(0,0,0,0.95) !important}
     .multiline input:focus:checked ~ .box:before,.multiline input:focus:checked ~ label:before{background-color:#0d71bb !important}
     </style>
-    <!--<script>var r=new XMLHttpRequest();var updating=function(dom){var i=document.createElement("i");i.className="loading";dom.prepend(i)};var checkUpdate=function(dom){updating(dom);try{r.open("GET","https://raw.githubusercontent.com/Siphils/Typecho-Theme-Aria/master/version.json",true);r.send();r.onreadystatechange=function(){if(r.readyState===4){if(r.status==200){try{var d=JSON.parse(r.responseText)}catch(e){}if(d.version==ARIA_VERSION.trim()){dom.className+=" confirm";dom.style.paddingLeft="2em";dom.textContent="已经为最新版";var i=document.createElement("i");i.className="confirm";dom.prepend(i)}else{dom.className+=" alert";dom.style.paddingLeft="2em";dom.textContent="检查到新版本：";var i=document.createElement("i");i.className="alert";dom.prepend(i);if(typeof document.getElementById('update-info')==='undefined'||document.getElementById('update-info')===null){var log=document.createElement('div');log.id='update-info';log.classList.add('tip');log.innerHTML='<ul><li>新版本：'+d.version+'</li><li>更新日志：<a href="'+d.changeLog+'" target="_blank">changeLog</a></li><li>使用帮助：<a href="'+d.wiki+'" target="_blank">Wiki</a></li></ul>';Array.prototype.slice.call(document.getElementsByClassName('tip')).pop().after(log)}}}else{dom.textContent="请求失败！错误码："+r.status}}}}catch(e){dom.textContent="请求失败，请稍后重试！"+e}document.getElementsByTagName("button")[1].onclick=function(e){updating(e.target)}};window.onload=function(){checkUpdate(document.getElementById('check-update'))}</script>-->
+        <!--<script>var r=new XMLHttpRequest();var updating=function(dom){var i=document.createElement("i");i.className="loading";dom.prepend(i)};var checkUpdate=function(dom){updating(dom);try{r.open("GET","https://raw.githubusercontent.com/Siphils/Typecho-Theme-Aria/master/version.json",true);r.send();r.onreadystatechange=function(){if(r.readyState===4){if(r.status==200){try{var d=JSON.parse(r.responseText)}catch(e){}if(d.version==ARIA_VERSION.trim()){dom.className+=" confirm";dom.style.paddingLeft="2em";dom.textContent="已经为最新版";var i=document.createElement("i");i.className="confirm";dom.prepend(i)}else{dom.className+=" alert";dom.style.paddingLeft="2em";dom.textContent="检查到新版本：";var i=document.createElement("i");i.className="alert";dom.prepend(i);if(typeof document.getElementById('update-info')==='undefined'||document.getElementById('update-info')===null){var log=document.createElement('div');log.id='update-info';log.classList.add('tip');log.innerHTML='<ul><li>新版本：'+d.version+'</li><li>更新日志：<a href="'+d.changeLog+'" target="_blank">changeLog</a></li><li>使用帮助：<a href="'+d.wiki+'" target="_blank">Wiki</a></li></ul>';Array.prototype.slice.call(document.getElementsByClassName('tip')).pop().after(log)}}}else{dom.textContent="请求失败！错误码："+r.status}}}}catch(e){dom.textContent="请求失败，请稍后重试！"+e}document.getElementsByTagName("button")[1].onclick=function(e){updating(e.target)}};window.onload=function(){checkUpdate(document.getElementById('check-update'))}</script>-->
 EOF;
     echo '<div class="tip"><span class="current-ver"><strong><code>Ver ' . ARIA_VERSION . '</code></strong></span>
     <div class="tip-header"><h1>Typecho-Theme-Simple</h1></div>
@@ -481,7 +481,7 @@ function getfooterWidget()
     $opt = Helper::options();
     $html = ' <a data-v-d81624e6="" class="powered-by" href="http:\/\/www.typecho.org" title="念念不忘，必有回响。" target="_blank">  • Typecho Theme Lite</a>
         <a href="' . $opt->siteUrl . '" data-v-d81624e6="" class="subtitle"> • '.$opt->title .'</a>
-        <a href="http://qqexit.com/index.php/archives/23.html" data-v-d81624e6="" class="subtitle" title="Typecho-Theme-Simple Ver ' . ARIA_VERSION . ' by 砍柴人"> • Simple</a>
+        <a href="http://qqexit.com/index.php/archives/23.html" data-v-d81624e6="" class="subtitle" title="Typecho-Theme-Simple Ver ' . ARIA_VERSION . ' by 什么の窑"> • Simple</a>
         ';
 
     if (!$data) {

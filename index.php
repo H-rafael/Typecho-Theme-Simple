@@ -4,7 +4,7 @@
  * <a href="https://github.com/H-rafael/Typecho-Theme-Simple" target="_blank">Github</a> | <a href="http://qqexit.com/" target="_blank">Home</a>
  * @package Simple
  * @author  Kiln
- * @version 1.1.0
+ * @version 1.2.0
  * @link http://qqexit.com/index.php/archives/23/
  */
 

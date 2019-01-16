@@ -9,8 +9,18 @@
             background-color: #ddd;
             background-image: repeating-linear-gradient(-45deg,#fff,#fff 4px,transparent 4px,transparent 8px);
         }
+
+        #detailable-content-ul ul > * {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        #detailable-content-ul ul{
+            padding-left: 2rem;
+            list-style: circle;
+        }
     </style>
-<section data-v-75a8d7e8="" class="app-body container_section app-dep-footer-body">
+<section data-v-75a8d7e8=""  class="app-body container_section app-dep-footer-body" id="detailable-content-ul">
+<!--    id="detailable-content"-->
     <div data-v-0759750a="" data-v-75a8d7e8="" class="detailable-page">
         <h1 data-v-0759750a="" class="title"><span data-v-0759750a=""><?php $this->title() ?></span></h1>
         <p data-v-0759750a="" class="meta" style="display: none;"><span data-v-0759750a="" class="create-time">2016-03-14, 19:34:43</span></p>

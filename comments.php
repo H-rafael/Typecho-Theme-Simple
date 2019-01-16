@@ -82,6 +82,7 @@ function threadedComments($comments, $options) {
                 <?php $comments->listComments(); ?>
             </div>
 
+
         <?php endif; ?>
         <div id="page-nav">
             <?php $comments->pageNav('Previous', 'Next',1,'...',array('wrapTag' => 'ul', 'wrapClass' => '','itemTag' => 'li','currentClass' => 'page-current',)); ?>
@@ -175,6 +176,3 @@ function threadedComments($comments, $options) {
 </div>
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 
-<script type="application/javascript">
-
-</script>

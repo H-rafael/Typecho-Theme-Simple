@@ -7,14 +7,14 @@
  *
  * @package Simple
  * @author  Kiln
- * @version 1.1.0
+ * @version 1.2.0
  * @link http://qqexit.com/index.php/archives/23/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-<section data-v-75a8d7e8="" class="app-body container_section app-dep-footer-body">
+<section data-v-75a8d7e8="" class="app-body container_section app-dep-footer-body" >
     <div data-v-0759750a="" data-v-75a8d7e8="" class="detailable-page">
         <h1 data-v-0759750a="" class="title"><span data-v-0759750a=""><?php $this->title() ?></span></h1>
         <p data-v-0759750a="" class="meta" style="display: none;"><span data-v-0759750a="" class="create-time"><?php $this->date('F jS, Y'); ?></span></p>
@@ -27,6 +27,8 @@ $this->need('header.php');
                         <div class="post-content">
                             <?php $this->content(); ?>
                         </div>
+                        <?php postOther($this); ?>
+
                         <div>
                             <div lang="en-US" class="gitment-container gitment-header-container">
                                 <span class="gitment-header-like-btn">

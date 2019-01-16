@@ -6,7 +6,7 @@
  *
  * @package Simple
  * @author  Kiln
- * @version 1.1.0
+ * @version 1.2.0
  * @link http://qqexit.com/index.php/archives/23/
  */
 

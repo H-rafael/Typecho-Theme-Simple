@@ -358,8 +358,9 @@
 }
 #detailable-content ul > * {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
 }
+
 #detailable-content ul > *:last-child {
     margin-bottom: 0;
 }

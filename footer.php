@@ -3,7 +3,7 @@
         <div data-v-d81624e6="" class="icon-list">
             <a data-v-d81624e6="" href="" target="_blank"><span data-v-d81624e6=""><i data-v-d81624e6="" aria-hidden="true" class="fa fa-github-alt"></i></span></a>
             <a data-v-d81624e6="" href="" target="_blank"><span data-v-d81624e6=""><i data-v-d81624e6="" aria-hidden="true" class="fa fa-weibo"></i></span></a>
-            <a data-v-d81624e6="" href="mailto:tamen2009@qq.com" target="_blank"><span data-v-d81624e6=""><i data-v-d81624e6="" aria-hidden="true" class="fa fa-envelope"></i></span></a>
+            <a data-v-d81624e6="" href="mailto:<?php $this->remember('mail'); ?>" target="_blank"><span data-v-d81624e6=""><i data-v-d81624e6="" aria-hidden="true" class="fa fa-envelope"></i></span></a>
         </div>
         <a data-v-d81624e6="" class="powered-by"><?php getHitokoto(); ?></a>
         <a data-v-d81624e6="" class="powered-by">
@@ -19,7 +19,6 @@
 </div>
 <script type="text/javascript">
     function menu_select(sign) {
-
         if($('#dropdown-menu-5411').is(':hidden')){//如果当前隐藏
             $('#dropdown-menu-5411').show();//那么就显示div
         }else{//否则
@@ -36,6 +35,14 @@
         $("#search-box>.close").on("click", function() {
             $("#search-box").hide()
         })
+    })
+
+    $('.post-reward').click(function () {
+        if($('.post-reward ul').is(':hidden')){//如果当前隐藏
+            $('.post-reward ul').show();
+        }else{//否则
+            $('.post-reward ul').hide();//就隐藏div
+        }
     })
 
     $.fn.extend({
@@ -64,3 +71,4 @@
 <script type="text/javascript" src="<?php $this->options->themeUrl('assets/js/function.js'); ?>"></script>
 </body>
 </html>
+

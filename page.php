@@ -11,8 +11,8 @@
         }
 
         #detailable-content-ul ul > * {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
+            /*margin-top: 0;*/
+            /*margin-bottom: 0.5rem;*/
         }
         #detailable-content-ul ul{
             padding-left: 2rem;

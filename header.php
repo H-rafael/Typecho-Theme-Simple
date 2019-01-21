@@ -38,6 +38,8 @@
 
     <script async="" src="<?php $this->options->themeUrl('assets/js/analytics.js'); ?>" charset="utf8"></script>
     <?php if($this->options->userHeader) $this->options->userHeader(); ?>
+    <link href="<?php $this->options->themeUrl('assets/css/styles_nav.css'); ?>" rel="stylesheet" />
+
 
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
@@ -60,7 +62,6 @@
         }
 
     </style>
-    <link href="<?php $this->options->themeUrl('nav/css/styles.css'); ?>" rel="stylesheet" />
 </head>
 <?php AriaConfig(); ?>
 <body>

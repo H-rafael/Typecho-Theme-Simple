@@ -2,6 +2,8 @@
 <!-- saved from url=(0032)https://heskeybaozi.github.io/#/ -->
 <html lang="en">
 <head>
+    <link rel="dns-prefetch" href="//ww2.sinaimg.cn" />
+    <link rel="dns-prefetch" href="//ww1.sinaimg.cn" />
     <meta http-equiv="content-type" content="text/html; charset=<?php $this->options->charset(); ?>" />
     <link rel="icon" type="image/ico" href="<?php $this->options->themeUrl('favicon.ico'); ?>">
     <meta charset="<?php $this->options->charset(); ?>">
@@ -58,13 +60,17 @@
         }
 
     </style>
+    <link href="<?php $this->options->themeUrl('nav/css/styles.css'); ?>" rel="stylesheet" />
 </head>
 <?php AriaConfig(); ?>
 <body>
 <ul data-v-26df1257="" class="el-dropdown-menu el-popper el-dropdown-menu--small " id="dropdown-menu-5411" style="position: fixed; top: 36px; left: 5px; transform-origin: center top 0px; z-index: 2000; display:none" x-placement="bottom-end">
-    <?php $slugs = getPermalinkFromSlug();showNav(0,$slugs); ?>
+    <?php $slugs = getPermalinkFromSlug();showNav(0,$slugs);
+    ?>
     <div x-arrow="" class="popper__arrow" style="left: 29.2422px;"></div>
 </ul>
+
+
 <div data-v-75a8d7e8="" id="app">
     <a name="top"></a>
     <div data-v-26df1257="" data-v-75a8d7e8="" id="top-nav">
@@ -84,16 +90,16 @@
                     </div>
 <!--                    <i class="iconfont icon-aria-search" id="nav-search-btn" style="font-size: 25px;margin-right: 32px;float: right;color: #5c5c5c;margin-top: 2px;"></i>-->
                 </div>
-                <div data-v-26df1257="" class="el-col el-col-24 el-col-xs-0 el-col-sm-24">
-                    <ul data-v-26df1257="" role="menubar" class="el-menu el-menu-demo el-menu--horizontal">
+                <div data-v-26df1257="" class="el-col el-col-24 el-col-xs-0 el-col-sm-24" style="position: fixed;z-index: 9999;top: 0px;">
+                    <ul id="colorNav" data-v-26df1257="" role="menubar" class="el-menu el-menu-demo el-menu--horizontal" style="border-bottom: 0px;">
                         <?php showNav(1,$slugs); ?>
+
                         <li data-v-26df1257="" role="menuitem" tabindex="0" class="el-menu-item" style="border-bottom-color: transparent;">
                             <span data-v-26df1257="" class="item-icon">
                                 <i class="iconfont icon-aria-search" id="nav-search-btn" style="    font-size: 25px;"></i>
                             </span>
                         </li>
                     </ul>
-
                 </div>
             </div>
             <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(50px); background: url('http://ww1.sinaimg.cn/large/ac1a0c4agy1ftz7qj6l3xj21hc0u0b29.jpg') 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
@@ -115,6 +121,14 @@
             <p data-v-73f77182="" class="author"><?php $this->options->title(); ?></p>
             <p data-v-73f77182="" class="description"><?php $this->options->description(); ?></p>
 
-            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(30px); background: url(<?php $this->options->themeUrl('assets/img/miku.jpg'); ?>) 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
+            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(30px); background: url( <?php
+            if($this->is('post') || $this->is('page') || $this->is('single'))
+                if($this->fields->thumbnail)
+                    $this->fields->thumbnail();
+                else
+                    echo getThumbnail();
+            else
+                getBackground();
+            ?>) 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
         </div>
     </header>

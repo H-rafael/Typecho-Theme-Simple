@@ -149,3 +149,13 @@ new OwO({
     width: "100%",
     maxHeight: "250px"
 })
+
+
+$('.el-menu-item').mousemove(function () {
+    var val = $(this).attr('val');
+    $('#menu_'+val).show();
+})
+$('.el-menu-item').mouseout(function () {
+    var val = $(this).attr('val');
+    $('#menu_'+val).hide();//就隐藏div
+})

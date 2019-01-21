@@ -19,11 +19,11 @@ button, hr, input {
 /*}*/
 
 .submit,.ui.checkbox,pre .lang,progress,sub,sup {
-vertical-align: baseline
+    vertical-align: baseline
 }[type=checkbox],[type=radio],legend {
-padding: 0;
-box-sizing: border-box
-}
+     padding: 0;
+     box-sizing: border-box
+ }
 
 /*#wrapper,[hidden],template {*/
 /*display: none*/
@@ -63,15 +63,15 @@ box-sizing: border-box
 /*}*/
 
 .submit,.submit:hover,a {
-text-decoration: none
+    text-decoration: none
 }
 
 b,strong {
-font-weight: bolder
+    font-weight: bolder
 }
 
 code,kbd,samp {
-font-family: monospace,monospace
+    font-family: monospace,monospace
 }
 
 /*small {*/
@@ -1443,9 +1443,9 @@ input[type=text], input[type=email], input[type=url], input[type=password] {
 /*background-color: rgba(255,255,255,.6)*/
 /*}*/
 
-/*#nav-menu a,#nav-right>ul,.nav-right-item {*/
-/*display: inline-block*/
-/*}*/
+#nav-menu a,#nav-right>ul,.nav-right-item {
+    display: inline-block
+}
 
 /*#nav-menu,#nav-vertical {*/
 /*position: fixed;*/
@@ -1518,15 +1518,15 @@ input[type=text], input[type=email], input[type=url], input[type=password] {
 /*float: right*/
 /*}*/
 
-/*#nav-right>ul {*/
-/*list-style: none;*/
-/*margin: 0;*/
-/*padding: 0*/
-/*}*/
+#nav-right>ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
 
-/*.nav-right-item {*/
-/*position: relative*/
-/*}*/
+.nav-right-item {
+    position: relative
+}
 
 #nav-btns #nav-menu-btn, #search-box, .nav-sub {
     display: none
@@ -1543,11 +1543,31 @@ input[type=text], input[type=email], input[type=url], input[type=password] {
 /*margin: 0 3px*/
 /*}*/
 
-/*.nav-sub {*/
+.nav-sub {
+    list-style: none;
+    left: 24%;
+    top: 41px;
+    background-color: rgba(255,255,255,.8);
+    border-radius: 5px;
+    padding: 5px!important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transform: translateX(-50%)!important;
+    -webkit-transform: translateX(-20%)!important;
+    -moz-transform: translateX(-50%)!important;
+    -ms-transform: translateX(-50%)!important;
+    -o-transform: translateX(-50%)!important;
+    background-color: white;
+
+}
+/*left: 50%;*/
+/*top: 53px;*/
 /*list-style: none;*/
 /*position: absolute;*/
-/*width: 100%;*/
-/*left: -5px;*/
+/*!*width: 100%;*!*/
+/*!*left: -5px;*!*/
 /*top: 53px;*/
 /*background-color: rgba(255,255,255,.8);*/
 /*border-radius: 5px;*/
@@ -1555,41 +1575,59 @@ input[type=text], input[type=email], input[type=url], input[type=password] {
 /*-webkit-border-radius: 5px;*/
 /*-moz-border-radius: 5px;*/
 /*-ms-border-radius: 5px;*/
-/*-o-border-radius: 5px*/
-/*}*/
+/*-o-border-radius: 5px;*/
+/*position: fixed;*/
+/*z-index: 9999999;*/
 
-/*.nav-sub::before {*/
-/*content: "";*/
-/*height: 0;*/
-/*position: absolute;*/
-/*top: -12px;*/
-/*left: 50%;*/
-/*width: 0;*/
-/*transform: translateX(-50%);*/
-/*border-right: 12.5px solid transparent;*/
-/*border-bottom: 12px solid rgba(255,255,255,.8);*/
-/*border-left: 12.5px solid transparent*/
-/*}*/
 
-/*#response p,#site-meta {*/
-/*transform: translate(-50%,-50%)*/
-/*}*/
 
-/*.sub-item a,.sub-item i {*/
-/*font-size: 15px!important;*/
-/*line-height: 25px!important*/
-/*}*/
+.nav-sub::before {
+    content: "";
+    height: 0;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 0;
+    transform: translateX(-50%);
+    border-right: 12.5px solid transparent;
+    border-bottom: 12px solid rgba(255, 255, 255, .8);
+    border-left: 12.5px solid transparent
+}
 
-/*.sub-item a {*/
-/*width: 100%;*/
-/*margin: 0 auto!important*/
-/*}*/
 
-/*.sub-item {*/
-/*word-break: break-all;*/
-/*text-align: center;*/
-/*margin: 10px 0*/
-/*}*/
+.flipInX {
+    -webkit-backface-visibility: visible!important;
+    backface-visibility: visible!important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#response p,#site-meta {
+    transform: translate(-50%,-50%)
+}
+
+.sub-item a,.sub-item i {
+    font-size: 15px!important;
+    line-height: 25px!important
+}
+
+.sub-item a {
+    width: 100%;
+    margin: 0 auto!important
+}
+
+.sub-item {
+    word-break: break-all;
+    text-align: center;
+    margin: 10px 0
+}
 
 /*#nav-btns {*/
 /*margin: 0 5px;*/

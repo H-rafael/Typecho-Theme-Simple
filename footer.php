@@ -45,6 +45,7 @@
         }
     })
 
+
     $.fn.extend({
         animateCss: function(t, n) {
             var e = function(t) {

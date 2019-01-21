@@ -239,6 +239,7 @@ function showNav($mode,$slugs)
 
     if ($data) {
         $html = '';
+        $i = 1;
         if ($mode) {
             foreach ($data as $v) {
                 $text = array_key_exists('text', $v) ? $v['text'] : "";
@@ -250,9 +251,27 @@ function showNav($mode,$slugs)
                     $href = 'href="' . $slug['permarlink'] . '"';
                     $text = $slug['title'];
                 }
-                $html = "<li data-v-26df1257=\"\" role=\"menuitem\" tabindex=\"0\" class=\"el-menu-item\" style=\"border-bottom-color: transparent;\"><a $href><span data-v-26df1257=\"\" class=\"item-icon\"><i data-v-26df1257=\"\" aria-hidden=\"true\" $icon></i></span> <span data-v-26df1257=\"\">$text</span></a>";
+                $html = "<li data-v-26df1257=\"\" role=\"menuitem\" tabindex=\"0\" val='".$i."' class=\"el-menu-item\" style=\"border-bottom-color: transparent;\"><a $href><span data-v-26df1257=\"\" class=\"item-icon\"><i data-v-26df1257=\"\" aria-hidden=\"true\" $icon></i></span> <span data-v-26df1257=\"\">$text</span></a>";
+                if (array_key_exists('sub', $v)) {
+                    $html .= '<ul class="nav-sub " id="menu_'.$i.'">';
+                    foreach ($v['sub'] as $_k => $_v) {
+//                        print_r($_v);
+                        $text = array_key_exists('text', $_v) ? $_v['text'] : "";
+                        $href = array_key_exists('href', $_v) ? 'href="' . $_v['href'] . '"' : "";
+                        $icon = array_key_exists('icon', $_v) ? 'class="' . $_v['icon'] . '"' : "";
+                        $target = array_key_exists('target', $_v) ? 'target="' . $_v['target'] . '"' : "";
+                        $slug = (array_key_exists('slug', $_v) && $slugs && array_key_exists($_v['slug'], $slugs)) ? $slugs[$_v['slug']] : false;
+                        if ($slug) {
+                            $href = 'href="' . $slug['permarlink'] . '"';
+                            $text = $slug['title'];
+                        }
+                        $html .= "<li class=\"\"><a $href $target><i $icon></i>$text</a></li>";
+                    }
+                    $html .= "</ul>";
+                }
                 $html .= "</li>";
                 echo $html;
+                $i++;
              }
         } else {
             foreach ($data as $v) {
@@ -276,28 +295,29 @@ function showNav($mode,$slugs)
                                 </a>
                             ";
 //                $html .= "<li class=\"nav-vertical-item\"><a $href $target><i $icon></i>  $text</a>";
-//                if (array_key_exists('sub', $v)) {
-//                    $html .= '<ul class="nav-vertical-sub">';
-//                    foreach ($v['sub'] as $_k => $_v) {
-//                        $text = array_key_exists('text', $_v) ? $_v['text'] : "";
-//                        $href = array_key_exists('href', $_v) ? 'href="' . $_v['href'] . '"' : "";
-//                        $icon = array_key_exists('icon', $_v) ? 'class="' . $_v['icon'] . '"' : "";
-//                        $target = array_key_exists('target', $_v) ? 'target="' . $_v['target'] . '"' : "";
-//                        $slug = (array_key_exists('slug', $_v) && $slugs && array_key_exists($_v['slug'], $slugs)) ? $slugs[$_v['slug']] : false;
-//                        if ($slug) {
-//                            $href = 'href="' . $slug['permarlink'] . '"';
-//                            $text = $slug['title'];
-//                        }
-//                        $html .= "<li class=\"vertical-sub-item\"><a $href $target><i $icon></i>  $text</a></li>";
-//                    }
-//                    $html .= "</ul>";
-//                }
+                if (array_key_exists('sub', $v)) {
+                    $html .= '<ul class="nav-vertical-sub">';
+                    foreach ($v['sub'] as $_k => $_v) {
+                        $text = array_key_exists('text', $_v) ? $_v['text'] : "";
+                        $href = array_key_exists('href', $_v) ? 'href="' . $_v['href'] . '"' : "";
+                        $icon = array_key_exists('icon', $_v) ? 'class="' . $_v['icon'] . '"' : "";
+                        $target = array_key_exists('target', $_v) ? 'target="' . $_v['target'] . '"' : "";
+                        $slug = (array_key_exists('slug', $_v) && $slugs && array_key_exists($_v['slug'], $slugs)) ? $slugs[$_v['slug']] : false;
+                        if ($slug) {
+                            $href = 'href="' . $slug['permarlink'] . '"';
+                            $text = $slug['title'];
+                        }
+                        $html .= "<li class=\"vertical-sub-item\"><a $href $target><i $icon></i>  $text</a></li>";
+                    }
+                    $html .= "</ul>";
+                }
                 $html .= "</li>";
             }
             echo $html;
 
         }
     }
+
     //转换失败
     echo false;
 }

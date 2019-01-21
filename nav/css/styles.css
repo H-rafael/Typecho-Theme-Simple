@@ -1,0 +1,55 @@
+
+#colorNav > ul{
+	width: 450px; /* Increase when adding more menu items */
+	margin:0 auto;
+}
+
+#colorNav > ul > li{ /* will style only the top level li */
+	list-style: none;
+	box-shadow: 0 0 10px rgba(100, 100, 100, 0.2) inset,1px 1px 1px #CCC;
+	display: inline-block;
+	line-height: 1;
+	margin: 1px;
+	border-radius: 3px;
+	position:relative;
+}
+
+#colorNav > ul > li > a{
+	color:inherit;
+	text-decoration:none !important;
+	font-size:24px;
+	padding: 25px;
+}
+
+#colorNav li ul{
+	position:absolute;
+	list-style:none;
+	text-align:center;
+	font:bold 12px 'Open Sans Condensed', sans-serif;
+	-webkit-transition:max-height 0.4s linear;
+	-moz-transition:max-height 0.4s linear;
+	transition:max-height 0.4s linear;
+}
+
+#colorNav li ul li a{
+	padding:9px;
+	text-decoration:none !important;
+	display:block;
+}
+
+#colorNav li ul li:first-child{
+	border-radius:3px 3px 0 0;
+	position:relative;
+}
+
+#colorNav li ul li:last-child{
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+}
+
+/* This will trigger the CSS */
+/* transition animation on hover */
+
+#colorNav li:hover ul{
+	max-height:200px; /* Increase when adding more dropdown items */
+}

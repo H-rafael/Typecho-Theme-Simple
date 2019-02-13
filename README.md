@@ -16,16 +16,21 @@ git clone https://github.com/H-rafael/Typecho-Theme-Simple.git
 # 后台设置
 
 1.下载好文件改名为Simple：控制台->外观->开启，这样基本就显示出来了
+
 2.站点头像设置：默认为博主后台邮箱设置的Gravatar头像，更换请写全头像地址名
+
 3.默认文章缩略图：请填写图片的完整地址，换行为第二张随机图
 
 4.首页背景图片：请填写图片的完整地址，换行为第二张随机背景图
+
 5.统计代码：这个可以根据你是百度的还是360的统计代码，喜欢那个用那个咯
+
 6.导航栏配置：默认都是一级导航，加二级导航代码，主要是sub开始是二级
+
 {
-    "text":"归档",
-    "href":"http://qqexit.com/index.php/archives/23.html",
-    "icon":"iconfont icon-aria-book",
+     "text":"归档",
+     "href":"http://qqexit.com/index.php/archives/23.html",
+     "icon":"iconfont icon-aria-book",
     "sub" : [
         {
             "text":"图标展示",
@@ -34,6 +39,7 @@ git clone https://github.com/H-rafael/Typecho-Theme-Simple.git
         },
     ]
 }
+
 7.打赏功能配置：主要是配置，前面是什么类型的支付，后面是支付二维码
     "Alipay":"http://bl.qqexit.com/usr/themes/Simple/assets/img/alipay.png",
     "Wechat":"http://bl.qqexit.com/usr/themes/Simple/assets/img/wechat.png"

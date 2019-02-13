@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0032)https://heskeybaozi.github.io/#/ -->
 <html lang="en">
 <head>
     <link rel="dns-prefetch" href="//ww2.sinaimg.cn" />
@@ -9,7 +8,6 @@
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
     <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <meta http-equiv=X-UA-Compatible content="ie=edge">
     <!-- 通过自有函数输出HTML头部信息 -->
@@ -122,14 +120,28 @@
             <p data-v-73f77182="" class="author"><?php $this->options->title(); ?></p>
             <p data-v-73f77182="" class="description"><?php $this->options->description(); ?></p>
 
-            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(30px); background: url( <?php
-            if($this->is('post') || $this->is('page') || $this->is('single'))
-                if($this->fields->thumbnail)
-                    $this->fields->thumbnail();
-                else
-                    echo getThumbnail();
-            else
-                getBackground();
-            ?>) 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
+            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(30px);
+                    background: url(
+                        <?php
+                        if($this->is('post') || $this->is('page') || $this->is('single'))
+                            if($this->fields->thumbnail)
+                                $this->fields->thumbnail();
+                            else
+                                echo getThumbnail();
+                        else
+                            getBackground();
+                        ?>
+                    ) 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
         </div>
     </header>
+
+
+
+
+
+
+
+
+
+
+

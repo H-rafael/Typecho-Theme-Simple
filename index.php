@@ -18,10 +18,8 @@ $this->need('header.php');
 </style>
 <section data-v-75a8d7e8="" class="app-body container_section app-dep-footer-body">
     <div data-v-802392fc="" data-v-75a8d7e8="" id="home-page">
-
         <button data-v-802392fc="" type="button" class="el-button back el-button--default el-button--mini is-plain" style="display: none;">
            <span><i data-v-802392fc="" aria-hidden="true" class="fa fa-undo"></i> <span data-v-802392fc="">Back</span></span></button>
-
         <div data-v-802392fc="" class="article-card-list">
             <?php while($this->next()): ?>
             <div data-v-e8c9ac44="" data-v-802392fc="" class="article-card">

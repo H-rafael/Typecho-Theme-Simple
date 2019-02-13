@@ -27,6 +27,34 @@ $this->need('header.php');
                         <div class="post-content">
                             <?php $this->content(); ?>
                         </div>
+                        <link href="<?php $this->options->themeUrl('assets/css/count-down.css'); ?>" rel="stylesheet" media="screen" />
+                        <script src="<?php $this->options->themeUrl('count-down/js/html5shiv.js'); ?>"></script>
+
+                        <style>
+                            @font-face {
+                                font-family: 'JournalRegular';
+                                src: url('/usr/themes/Simple/count-down/fonts/journal-webfont.eot');
+                                src: url('/usr/themes/Simple/count-down/fonts/journal-webfont_162a16fe.eot') format('embedded-opentype'), url('/usr/themes/Simple/count-down/fonts/journal-webfont.woff') format('woff'), url('/usr/themes/Simple/count-down/fonts/journal-webfont.ttf') format('truetype'), url('/usr/themes/Simple/count-down/fonts/journal-webfont.svg') format('svg');
+                                font-weight: normal;
+                                font-style: normal;
+                            }
+                        </style>
+                        <div class="container-count">
+                            <div class="hero-unit">
+                                <h1 id="days"> 高考倒计时</h1>
+                            </div>
+                            <div class="clock">
+                                <input type="hidden" id="date_time" value="<?php   countDown();?>">
+                                <div class="span6"> <img class="img-clock" src="<?php $this->options->themeUrl('assets/img/bg-clock.png'); ?>" alt="clock counter" />
+                                    <div id="countdown">
+                                        <div class="days"><span id="days"></span> <ins>/</ins> <em>days /</em></div>
+                                        <div class="hours"><span id="hours"></span> <ins>/</ins> <em>hours /</em></div>
+                                        <div class="minutes"><span id="minutes"></span> <ins>/</ins> <em>min /</em></div>
+                                        <div class="seconds"><span id="seconds"></span><em>sec</em> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <?php postOther($this); ?>
 
                         <div>
@@ -58,4 +86,7 @@ $this->need('header.php');
         </button>
     </div>
 </section>
+<script src="<?php $this->options->themeUrl('count-down/js/bootstrap-tooltip.js'); ?>"></script>
+<script type="text/javascript" src="<?php $this->options->themeUrl('count-down/js/jquery.countdown.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php $this->options->themeUrl('count-down/js/jquery.custom.js'); ?>"></script>
 <?php $this->need('footer.php'); ?>

@@ -15,6 +15,7 @@
         text-decoration: none;
     }
 </style>
+
 <?php
 function threadedComments($comments, $options) {
     $commentClass = '';
@@ -48,7 +49,9 @@ function threadedComments($comments, $options) {
                 <?php if(isEnabled('showCommentUA','AriaConfig')): ?>
                     <span><?php echo parseUserAgent($comments->agent); ?></span>
                 <?php endif; ?>
-                <span class="comment-reply" style="float:right"><?php $comments->reply('<i class="iconfont icon-aria-reply"></i>'); ?></span>
+                <span class="comment-reply" style="float:right">
+                    <?php $comments->reply('<i class="iconfont icon-aria-reply"></i>'); ?>
+                </span>
             </div>
             <div class="gitment-comment-body gitment-markdown">
                 <?php showCommentContent($comments->coid); ?>
@@ -123,8 +126,7 @@ function threadedComments($comments, $options) {
                     <label for="author" class="required">
                         <i class="iconfont icon-aria-username"></i>
                     </label>
-                    <input placeholder="（必填）昵称" type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>"
-                           required />
+                    <input placeholder="（必填）昵称" type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" required />
                 </p>
                 <p class="comment-input">
                     <label for="mail" <?php if ($this->options->commentsRequireMail): ?> class="required"

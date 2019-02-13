@@ -110,6 +110,8 @@ EOF;
 
     $gravatarPrefix = new Typecho_Widget_Helper_Form_Element_Text('gravatarPrefix', null, null, _t('Gravatar头像源'), _t('留空为https://cn.gravatar.com/avatar/，按照前面的url地址格式填写'));
     $form->addInput($gravatarPrefix);
+    $countDown = new Typecho_Widget_Helper_Form_Element_Text('countDown', null, null, _t('高考倒计时日期'), _t('按日期格式填写，比如：2019-06-07'));
+    $form->addInput($countDown);
 
     $navConfig = new Typecho_Widget_Helper_Form_Element_Textarea('navConfig', null,
         '{
@@ -215,8 +217,18 @@ function AriaConfig()
         "OWO_JSON" => $OwOJson,
         "HITOKOTO_ORIGIN" => $hitokotoOrigin,
         "GRAVATAR_PREFIX" => $gravatarPrefix,
+        "GRAVATAR_PREFIX" => $gravatarPrefix,
     ));
     echo "<script>window.THEME_CONFIG = $THEME_CONFIG</script>\n";
+}
+
+function countDown(){
+    $countDown = Helper::options()->countDown;
+    if(!empty($countDown)){
+        $str_to_time = strtotime($countDown);
+        echo date('Y/m/d 00:00:00',$str_to_time);
+    }
+    echo false;
 }
 
 /**

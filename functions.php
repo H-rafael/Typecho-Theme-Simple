@@ -435,22 +435,29 @@ function pageArchives($post)
     static $lastY = null,
     $lastM = null;
     $t = $post->created;
-    $href = $post->permalink;
+    $href = $post->permalink;//F jS, Y
     $title = $post->title;
     $y = date('Y', $t) . ' 年';
     $m = date('m', $t) . ' 月';
-    $d = date('d', $t) . ' 日';
+    $d = date('jS', $t) . ' 日';
     $t_href = Helper::options()->siteUrl . date('Y/m', $t);
     $html = '';
     if ($lastY == date('Y', $t) || $lastY == null) {
         if ($lastM != date('m', $t)) {
             $lastM = date('m', $t);
-            $html .= "<div class=\"timeline-ym timeline-item\"><a href=\"$t_href\" target=\"_blank\">$y $m</a></div>";
+            $html .="<div data-v-06bf989f=\"\" class=\"leading\"><i data-v-06bf989f=\"\" aria-hidden=\"true\" class=\"fa fa-clock-o\"></i><span data-v-06bf989f=\"\">$y $m</span></div>";
         }
     } else {
         $lastY = date('Y', $t);
     }
-    $html .= '<div class="timeline-box"><div class="timeline-post timeline-item">' . '<a href="' . $href . '" target="_blank">' . $title . '</a><span class="timeline-post-time">' . $d . '</span></div></div>';
+    $html .=' <div data-v-06bf989f="" class="one-timeline el-row el-row--flex" style="margin-left: -5px; margin-right: -5px;">
+                <div data-v-06bf989f="" class="one-time el-col el-col-6 el-col-offset-2" style="padding-left: 5px; padding-right: 5px;">
+                    '.$d.'
+                </div>
+                <div data-v-06bf989f="" class="one-title el-col el-col-16" style="padding-left: 5px; padding-right: 5px;">
+                    <a data-v-06bf989f="" href="' . $href . '" class=""> ' . $title . ' </a>
+                </div>
+            </div>';
     echo $html;
 }
 
@@ -869,7 +876,10 @@ function getHitokoto(){
 //    $url = 'https://v1.hitokoto.cn/?c=g'; // http://api.hitokoto.cn/
     $url = 'https://v1.hitokoto.cn/?c=a'; // http://api.hitokoto.cn/
     $array_data = json_decode(file_get_contents($url),true);
-    $content = $array_data['hitokoto'];
+    $content = '';
+    if(!empty($array_data)){
+        $content = $array_data['hitokoto'];
+    }
 //    $content = $array_data['hitokoto'].'----《'.$array_data['from'].'》';
     echo $content;
 }

@@ -35,7 +35,7 @@ git clone https://github.com/H-rafael/Typecho-Theme-Simple.git
 7.打赏功能配置：主要是配置，前面是什么类型的支付，后面是支付二维码
     "Alipay":"http://bl.qqexit.com/usr/themes/Simple/assets/img/alipay.png",
     "Wechat":"http://bl.qqexit.com/usr/themes/Simple/assets/img/wechat.png"
-##友链代码
+# 友链代码
 !!!
 [link-box]
 [link-item href="http://qqexit.com" title="Kiln" img="http://animtv.cn/anim_wo/html/user_img/img_3172.jpg" name="Kiln窑"]

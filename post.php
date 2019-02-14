@@ -39,22 +39,26 @@ $this->need('header.php');
                                 font-style: normal;
                             }
                         </style>
-                        <div class="container-count">
-                            <div class="hero-unit">
-                                <h1 id="days"> 高考倒计时</h1>
-                            </div>
-                            <div class="clock">
-                                <input type="hidden" id="date_time" value="<?php   countDown();?>">
-                                <div class="span6"> <img class="img-clock" src="<?php $this->options->themeUrl('assets/img/bg-clock.png'); ?>" alt="clock counter" />
-                                    <div id="countdown">
-                                        <div class="days"><span id="days"></span> <ins>/</ins> <em>days /</em></div>
-                                        <div class="hours"><span id="hours"></span> <ins>/</ins> <em>hours /</em></div>
-                                        <div class="minutes"><span id="minutes"></span> <ins>/</ins> <em>min /</em></div>
-                                        <div class="seconds"><span id="seconds"></span><em>sec</em> </div>
+                        <?php
+                        $time_count = countDown();
+                        if(!empty($time_count)){ ?>
+                            <div class="container-count">
+                                <div class="hero-unit">
+                                    <h1 id="days"> 高考倒计时</h1>
+                                </div>
+                                <div class="clock">
+                                    <input type="hidden" id="date_time" value="<?php   countDown();?>">
+                                    <div class="span6"> <img class="img-clock" src="<?php $this->options->themeUrl('assets/img/bg-clock.png'); ?>" alt="clock counter" />
+                                        <div id="countdown">
+                                            <div class="days"><span id="days"></span> <ins>/</ins> <em>days /</em></div>
+                                            <div class="hours"><span id="hours"></span> <ins>/</ins> <em>hours /</em></div>
+                                            <div class="minutes"><span id="minutes"></span> <ins>/</ins> <em>min /</em></div>
+                                            <div class="seconds"><span id="seconds"></span><em>sec</em> </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php } ?>
                         <?php postOther($this); ?>
 
                         <div>

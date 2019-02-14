@@ -40,8 +40,7 @@ $this->need('header.php');
                             }
                         </style>
                         <?php
-                        $time_count = countDown();
-                        if(!empty($time_count)){ ?>
+                        if($this->options->countDown): ?>
                             <div class="container-count">
                                 <div class="hero-unit">
                                     <h1 id="days"> 高考倒计时</h1>
@@ -58,7 +57,7 @@ $this->need('header.php');
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
+                        <?php endif; ?>
                         <?php postOther($this); ?>
 
                         <div>

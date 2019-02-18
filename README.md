@@ -65,9 +65,13 @@ http://www.gravatar.com/avatar/0b8e4bd30bcdb7da74167bb5f5027c0a?s=220&r=X&d=mm
 }
 
 ```
+* 高考倒计时：不写时间默认不出现，填写格式比如：2019-06-07
+```$xslt
+ 格式  2019-06-07
 
+```
 
-7.打赏功能配置：主要是配置，前面是什么类型的支付，后面是支付二维码
+* 打赏功能配置：主要是配置，前面是什么类型的支付，后面是支付二维码
 ```$xslt
  "Alipay":"http://bl.qqexit.com/usr/themes/Simple/assets/img/alipay.png",
  "Wechat":"http://bl.qqexit.com/usr/themes/Simple/assets/img/wechat.png"

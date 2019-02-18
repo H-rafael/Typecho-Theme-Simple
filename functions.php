@@ -153,7 +153,7 @@ EOF;
 
     $AriaConfig = new Typecho_Widget_Helper_Form_Element_Checkbox('AriaConfig',
         array(
-//            'showHitokoto' => '页面底部显示一言',
+            'showHitokoto' => '页面底部显示一言',
 //            'usePjax' => '开启PJAX(需要关闭评论反垃圾保护)',
 //            'useAjaxComment' => '开启AJAX评论',
 //            'useFancybox' => '文章/评论图片使用<a href="http://fancyapps.com" target="_blank">fancybox</a>',
@@ -162,7 +162,7 @@ EOF;
             'useCommentToMail' => '评论邮件回复按钮（需要配合<a href="https://9sb.org/58">CommentToMail</a>使用）',
             'showCommentUA' => '评论显示UserAgent（显示操作系统和浏览器信息）',
         ),
-        array('showHitokoto', 'usePjax', 'useAjaxComment', 'useFancybox', 'useLazyload', 'showQRCode', 'useCommentToMail', 'showCommentUA'),
+        array('showHitokoto', 'usePjax', 'useAjaxComment', 'useFancybox', 'useLazyload', 'showQRCode', 'useCommentToMail', 'showCommentUA','countDown'),
         '其他设置'
     );
     $form->addInput($AriaConfig->multiMode());
@@ -197,6 +197,7 @@ function AriaConfig()
     $showQRCode = isEnabled('showQRCode', 'AriaConfig');
     $showReward = $options->rewardConfig ? true : false;
     $usePjax = isEnabled('usePjax', 'AriaConfig');
+    $countDown = isEnabled('countDown', 'AriaConfig');
     $useAjaxComment = isEnabled('useAjaxComment', 'AriaConfig');
     $useFancybox = isEnabled('useFancybox', 'AriaConfig');
     $useLazyload = isEnabled('useLazyload', 'AriaConfig');
@@ -217,7 +218,7 @@ function AriaConfig()
         "OWO_JSON" => $OwOJson,
         "HITOKOTO_ORIGIN" => $hitokotoOrigin,
         "GRAVATAR_PREFIX" => $gravatarPrefix,
-        "GRAVATAR_PREFIX" => $gravatarPrefix,
+        "COUNTDOWN" => $countDown,
     ));
     echo "<script>window.THEME_CONFIG = $THEME_CONFIG</script>\n";
 }
@@ -885,13 +886,58 @@ function getPermalinkFromSlug()
 }
 
 function getHitokoto(){
-//    $url = 'https://v1.hitokoto.cn/?c=g'; // http://api.hitokoto.cn/
-    $url = 'https://v1.hitokoto.cn/?c=a'; // http://api.hitokoto.cn/
+    $url = 'https://v1.hitokoto.cn/?c=a';
     $array_data = json_decode(file_get_contents($url),true);
     $content = '';
     if(!empty($array_data)){
         $content = $array_data['hitokoto'];
     }
-//    $content = $array_data['hitokoto'].'----《'.$array_data['from'].'》';
     echo $content;
+}
+
+/**
+ * @param $url
+ * @return int
+ * @ param string $url 待检测的网址
+ * 检测网页是否被百度收录，返回1则表示收录 返回0表示没有收录
+ */
+function checkBaiduInclude($url){
+//    $url = $this->permalink();
+
+    $url='http://www.baidu.com/s?wd='.$url;
+    $curl=curl_init();
+    curl_setopt($curl,CURLOPT_URL,$url);
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+    $rs=curl_exec($curl);
+    curl_close($curl);
+    if(!strpos($rs,'没有找到')){
+        return 1;
+    }else{
+        return 0;
+    }
+
+}
+
+function get_permalink1(){
+    echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+}
+
+function get_permalink()
+{
+    $pageURL = 'http';
+    if ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'))
+    {
+        $pageURL .= "s";
+    }
+    $pageURL .= "://";
+
+    if ($_SERVER["SERVER_PORT"] != "80")
+    {
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+    }
+    else
+    {
+        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+    }
+    return $pageURL;
 }

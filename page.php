@@ -42,7 +42,11 @@
                                 </svg> Like • <strong><?php getPostView($this); ?></strong> 次阅读 </span>
                                 <span> • <strong>
                                         <?php $this->commentsNum(_t('0 条评论'), _t('1 条评论'), _t('%d 条评论')); ?>
-                                </strong>  </span>
+                                </strong>
+                                </span>  •  是否收录：<?php
+                                $url = get_permalink();
+                                if(checkBaiduInclude($url) == 1) echo "百度已收录"; else echo "百度未收录"; ?>
+                                </span>
                             </div>
                         </div>
                         <?php $this->need('comments.php'); ?>

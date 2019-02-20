@@ -47,7 +47,7 @@ function threadedComments($comments, $options) {
     echo $commentClass;
     ?>">
         <a class="gitment-comment-avatar" href="" target="_blank">
-            <?php $comments->gravatar('240', '30'); ?>
+            <?php $comments->gravatar('240', ''); ?>
         </a>
         <div class="gitment-comment-main">
             <div class="gitment-comment-header">

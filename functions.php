@@ -69,7 +69,7 @@ EOF;
     echo '<div class="tip"><span class="current-ver"><strong><code>Ver ' . ARIA_VERSION . '</code></strong></span>
     <div class="tip-header"><h1>Typecho-Theme-Simple</h1></div>
     <p>感谢选择使用 <code>Simple</code> </p>
-    <p>查看<a href="https://github.com/H-rafael/Typecho-Theme-Simple">帮助手册</a>
+    <p>查看<a href="https://github.com/H-rafael/Typecho-Theme-Simple#README.md">帮助手册</a>
      <a href="https://github.com/H-rafael/Typecho-Theme-Simple/issues">issue</a> <a href="https://github.com/H-rafael/Typecho-Theme-Simple/pulls">PR</a>
      </p>
     <p><button id="check-update" onClick="checkUpdate(this);" class="btn primary" style="position:absolute;right:5px;bottom:5px;">检查更新</button></p>
@@ -220,6 +220,9 @@ function AriaConfig()
         "GRAVATAR_PREFIX" => $gravatarPrefix,
         "COUNTDOWN" => $countDown,
     ));
+//    var_dump($hitokotoOrigin);
+//    var_dump($THEME_CONFIG);
+
     echo "<script>window.THEME_CONFIG = $THEME_CONFIG</script>\n";
 }
 
@@ -886,13 +889,18 @@ function getPermalinkFromSlug()
 }
 
 function getHitokoto(){
-    $url = 'https://v1.hitokoto.cn/?c=a';
-    $array_data = json_decode(file_get_contents($url),true);
-    $content = '';
-    if(!empty($array_data)){
-        $content = $array_data['hitokoto'];
-    }
-    echo $content;
+
+    $options = Helper::options();
+    echo $options->hitokotoOrigin ? $options->hitokotoOrigin : 'https://v1.hitokoto.cn/?c=a&encode=text';
+
+//    die;
+//    $array_data = json_decode(file_get_contents($url),true);
+//    print_r($array_data);
+//    $content = '';
+//    if(!empty($array_data)){
+//        $content = $array_data['hitokoto'];
+//    }
+//    echo $content;
 }
 
 /**
@@ -902,8 +910,6 @@ function getHitokoto(){
  * 检测网页是否被百度收录，返回1则表示收录 返回0表示没有收录
  */
 function checkBaiduInclude($url){
-//    $url = $this->permalink();
-
     $url='http://www.baidu.com/s?wd='.$url;
     $curl=curl_init();
     curl_setopt($curl,CURLOPT_URL,$url);
@@ -918,15 +924,13 @@ function checkBaiduInclude($url){
 
 }
 
-function get_permalink1(){
-    echo 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-}
-
-function get_permalink()
-{
+/**
+ * @return string
+ * 获取http
+ */
+function get_permalink(){
     $pageURL = 'http';
-    if ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on'))
-    {
+    if ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on')) {
         $pageURL .= "s";
     }
     $pageURL .= "://";
@@ -934,9 +938,7 @@ function get_permalink()
     if ($_SERVER["SERVER_PORT"] != "80")
     {
         $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
-    }
-    else
-    {
+    } else {
         $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
     }
     return $pageURL;

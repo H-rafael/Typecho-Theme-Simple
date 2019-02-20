@@ -43,7 +43,6 @@
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
     <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
     <style>
         #app {
             background: url(
@@ -116,7 +115,7 @@
 
     <header data-v-75a8d7e8="" class="app-header container_section">
         <div data-v-73f77182="" data-v-75a8d7e8="" id="lite-header" style="position: relative; z-index: 1; background-color: rgb(255, 255, 255); color: rgb(255, 255, 255); overflow: hidden; height: 100%; width: 100%;">
-            <img data-v-73f77182="" no-lazyload src="<?php echo $this->options->avatarUrl ? $this->options->avatarUrl : __TYPECHO_GRAVATAR_PREFIX__ . md5( strtolower( trim( $this->author->mail ) ) ) . '?d=mp&r=g&s=120;' ?>" alt="avatar" class="avatar" />
+            <img data-v-73f77182="" no-lazyload src="<?php echo $this->options->avatarUrl ? $this->options->avatarUrl : __TYPECHO_GRAVATAR_PREFIX__ . md5( strtolower( trim( $this->author->mail ) ) ) . '?d=mp&r=g&s=420;' ?>" alt="avatar" class="avatar" />
             <p data-v-73f77182="" class="author"><?php $this->options->title(); ?></p>
             <p data-v-73f77182="" class="description"><?php $this->options->description(); ?></p>
 

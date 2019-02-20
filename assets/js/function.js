@@ -159,3 +159,359 @@ $('.el-menu-item').mouseout(function () {
     var val = $(this).attr('val');
     $('#menu_'+val).hide();//就隐藏div
 })
+
+$(function () {
+    var url = $('#hitokoto').attr('val_url');
+    $.get(url,function (t) {
+        $("#hitokoto").html(t)
+    })
+})
+function menu_select(sign) {
+    if($('#dropdown-menu-5411').is(':hidden')){//如果当前隐藏
+        $('#dropdown-menu-5411').show();//那么就显示div
+    }else{//否则
+        $('#dropdown-menu-5411').hide();//就隐藏div
+    }
+}
+
+$(function () {
+    $("#search-box").css("display") && $("#search-box").css("display", "none");
+    $("#nav-search-btn").on("click", function() {
+        $("#search-box").css("display", "flex");
+        $("#search-box").animateCss("zoomIn", function(t) {})
+    });
+    $("#search-box>.close").on("click", function() {
+        $("#search-box").hide()
+    })
+})
+
+$('.post-reward').click(function () {
+    if($('.post-reward ul').is(':hidden')){//如果当前隐藏
+        $('.post-reward ul').show();
+    }else{//否则
+        $('.post-reward ul').hide();//就隐藏div
+    }
+})
+
+
+$.fn.extend({
+    animateCss: function(t, n) {
+        var e = function(t) {
+            var n = {
+                animation: "animationend",
+                OAnimation: "oAnimationEnd",
+                MozAnimation: "mozAnimationEnd",
+                WebkitAnimation: "webkitAnimationEnd"
+            };
+            for (var e in n) if (void 0 !== t.style[e]) return n[e]
+        } (document.createElement("div"));
+        return this.addClass("animated " + t).one(e,
+            function() {
+                $(this).removeClass("animated " + t),
+                "function" == typeof n && n($(this))
+            }),
+            this
+    }
+})
+
+!
+    function(t, n) {
+        "use strict";
+        "function" == typeof define && define.amd ? define([], n) : "object" == typeof exports ? module.exports = n() : t.Headroom = n()
+    }(this,
+        function() {
+            "use strict";
+            function t(t) {
+                this.callback = t,
+                    this.ticking = !1
+            }
+            function o(t, n) {
+                var e;
+                n = function t(n) {
+                    if (arguments.length <= 0) throw new Error("Missing arguments in extend function");
+                    var e, o, i, r = n || {};
+                    for (o = 1; o < arguments.length; o++) {
+                        var a = arguments[o] || {};
+                        for (e in a)"object" != typeof r[e] || (i = r[e]) && "undefined" != typeof window && (i === window || i.nodeType) ? r[e] = r[e] || a[e] : r[e] = t(r[e], a[e])
+                    }
+                    return r
+                } (n, o.options),
+                    this.lastKnownScrollY = 0,
+                    this.elem = t,
+                    this.tolerance = (e = n.tolerance) === Object(e) ? e: {
+                        down: e,
+                        up: e
+                    },
+                    this.classes = n.classes,
+                    this.offset = n.offset,
+                    this.scroller = n.scroller,
+                    this.initialised = !1,
+                    this.onPin = n.onPin,
+                    this.onUnpin = n.onUnpin,
+                    this.onTop = n.onTop,
+                    this.onNotTop = n.onNotTop,
+                    this.onBottom = n.onBottom,
+                    this.onNotBottom = n.onNotBottom
+            }
+            var n = {
+                bind: !!
+                    function() {}.bind,
+                classList: "classList" in document.documentElement,
+                rAF: !!(window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame)
+            };
+            return window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame,
+                t.prototype = {
+                    constructor: t,
+                    update: function() {
+                        this.callback && this.callback(),
+                            this.ticking = !1
+                    },
+                    requestTick: function() {
+                        this.ticking || (requestAnimationFrame(this.rafCallback || (this.rafCallback = this.update.bind(this))), this.ticking = !0)
+                    },
+                    handleEvent: function() {
+                        this.requestTick()
+                    }
+                },
+                o.prototype = {
+                    constructor: o,
+                    init: function() {
+                        if (o.cutsTheMustard) return this.debouncer = new t(this.update.bind(this)),
+                            this.elem.classList.add(this.classes.initial),
+                            setTimeout(this.attachEvent.bind(this), 100),
+                            this
+                    },
+                    destroy: function() {
+                        var t = this.classes;
+                        for (var n in this.initialised = !1,
+                            t) t.hasOwnProperty(n) && this.elem.classList.remove(t[n]);
+                        this.scroller.removeEventListener("scroll", this.debouncer, !1)
+                    },
+                    attachEvent: function() {
+                        this.initialised || (this.lastKnownScrollY = this.getScrollY(), this.initialised = !0, this.scroller.addEventListener("scroll", this.debouncer, !1), this.debouncer.handleEvent())
+                    },
+                    unpin: function() {
+                        var t = this.elem.classList,
+                            n = this.classes; ! t.contains(n.pinned) && t.contains(n.unpinned) || (t.add(n.unpinned), t.remove(n.pinned), this.onUnpin && this.onUnpin.call(this))
+                    },
+                    pin: function() {
+                        var t = this.elem.classList,
+                            n = this.classes;
+                        t.contains(n.unpinned) && (t.remove(n.unpinned), t.add(n.pinned), this.onPin && this.onPin.call(this))
+                    },
+                    top: function() {
+                        var t = this.elem.classList,
+                            n = this.classes;
+                        t.contains(n.top) || (t.add(n.top), t.remove(n.notTop), this.onTop && this.onTop.call(this))
+                    },
+                    notTop: function() {
+                        var t = this.elem.classList,
+                            n = this.classes;
+                        t.contains(n.notTop) || (t.add(n.notTop), t.remove(n.top), this.onNotTop && this.onNotTop.call(this))
+                    },
+                    bottom: function() {
+                        var t = this.elem.classList,
+                            n = this.classes;
+                        t.contains(n.bottom) || (t.add(n.bottom), t.remove(n.notBottom), this.onBottom && this.onBottom.call(this))
+                    },
+                    notBottom: function() {
+                        var t = this.elem.classList,
+                            n = this.classes;
+                        t.contains(n.notBottom) || (t.add(n.notBottom), t.remove(n.bottom), this.onNotBottom && this.onNotBottom.call(this))
+                    },
+                    getScrollY: function() {
+                        return void 0 !== this.scroller.pageYOffset ? this.scroller.pageYOffset: void 0 !== this.scroller.scrollTop ? this.scroller.scrollTop: (document.documentElement || document.body.parentNode || document.body).scrollTop
+                    },
+                    getViewportHeight: function() {
+                        return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+                    },
+                    getElementPhysicalHeight: function(t) {
+                        return Math.max(t.offsetHeight, t.clientHeight)
+                    },
+                    getScrollerPhysicalHeight: function() {
+                        return this.scroller === window || this.scroller === document.body ? this.getViewportHeight() : this.getElementPhysicalHeight(this.scroller)
+                    },
+                    getDocumentHeight: function() {
+                        var t = document.body,
+                            n = document.documentElement;
+                        return Math.max(t.scrollHeight, n.scrollHeight, t.offsetHeight, n.offsetHeight, t.clientHeight, n.clientHeight)
+                    },
+                    getElementHeight: function(t) {
+                        return Math.max(t.scrollHeight, t.offsetHeight, t.clientHeight)
+                    },
+                    getScrollerHeight: function() {
+                        return this.scroller === window || this.scroller === document.body ? this.getDocumentHeight() : this.getElementHeight(this.scroller)
+                    },
+                    isOutOfBounds: function(t) {
+                        var n = t < 0,
+                            e = t + this.getScrollerPhysicalHeight() > this.getScrollerHeight();
+                        return n || e
+                    },
+                    toleranceExceeded: function(t, n) {
+                        return Math.abs(t - this.lastKnownScrollY) >= this.tolerance[n]
+                    },
+                    shouldUnpin: function(t, n) {
+                        var e = t > this.lastKnownScrollY,
+                            o = t >= this.offset;
+                        return e && o && n
+                    },
+                    shouldPin: function(t, n) {
+                        var e = t < this.lastKnownScrollY,
+                            o = t <= this.offset;
+                        return e && n || o
+                    },
+                    update: function() {
+                        var t = this.getScrollY(),
+                            n = t > this.lastKnownScrollY ? "down": "up",
+                            e = this.toleranceExceeded(t, n);
+                        this.isOutOfBounds(t) || (t <= this.offset ? this.top() : this.notTop(), t + this.getViewportHeight() >= this.getScrollerHeight() ? this.bottom() : this.notBottom(), this.shouldUnpin(t, e) ? this.unpin() : this.shouldPin(t, e) && this.pin(), this.lastKnownScrollY = t)
+                    }
+                },
+                o.options = {
+                    tolerance: {
+                        up: 0,
+                        down: 0
+                    },
+                    offset: 0,
+                    scroller: window,
+                    classes: {
+                        pinned: "headroom--pinned",
+                        unpinned: "headroom--unpinned",
+                        top: "headroom--top",
+                        notTop: "headroom--not-top",
+                        bottom: "headroom--bottom",
+                        notBottom: "headroom--not-bottom",
+                        initial: "headroom"
+                    }
+                },
+                o.cutsTheMustard = void 0 !== n && n.rAF && n.bind && n.classList,
+                o
+        });
+window.Aria = {
+    init: function() {
+        this.action.init(),
+        THEME_CONFIG.USE_PJAX && this.pjax(),
+        THEME_CONFIG.USE_FANCYBOX && this.fancybox(),
+        THEME_CONFIG.SHOW_HITOKOTO && this.hitokoto(),
+            this.hljs.init(),
+            this.commentPlus.init(),
+        THEME_CONFIG.USE_LAZYLOAD && this.lazyload(),
+            this.postOther.init(),
+            console.log("%cVer " + THEME_CONFIG.THEME_VERSION + "%cAria By Siphils http://qqexit.com", "color: #fff; background: #435561; padding:6px;", "color: #fff; background: #435561cf; padding:6px;")
+    },
+    pjax: function() {
+        $(document).pjax('a[href^="' + THEME_CONFIG.SITE_URL + '"]:not(a[target="_blank"], [no-pjax],a[rel~="nofollow"])', {
+            container: "#pjax-container",
+            fragment: "#pjax-container",
+            timeout: 8e3
+        }).on("pjax:send",
+            function() {
+                NProgress.start(),
+                    Aria.doPjaxStartAction()
+            }).on("pjax:complete",
+            function() {
+                NProgress.done(),
+                    Aria.doPjaxCompleteAction(),
+                "function" == typeof Aria.reloadAction && Aria.reloadAction()
+            })
+    },
+    doPjaxStartAction: function() {
+        $("#header").toggleClass("slideOutUp"),
+            $("#body").toggleClass("fadeOut"),
+            $("#wrapper").hide()
+    },
+    doPjaxCompleteAction: function() {
+        $("#header").removeClass("slideOutUp").addClass("slideInDown"),
+            $("#body").removeClass("fadeOut").addClass("fadeIn"),
+        THEME_CONFIG.USE_FANCYBOX && this.fancybox(),
+        THEME_CONFIG.SHOW_HITOKOTO && this.hitokoto(),
+        THEME_CONFIG.USE_LAZYLOAD && this.lazyload(),
+            this.hljs.init(),
+            this.commentPlus.init(),
+            this.postOther.init(),
+        "undefined" != typeof _hmt && _hmt.push(["_trackPageview", location.pathname + location.search]),
+        window._gaq && _gaq.push(["_trackPageview"]),
+        window.ga && ga("send", "pageview", {
+            page: location.pathname,
+            title: document.title
+        }),
+        "undefined" != typeof MathJax && MathJax.Hub.Queue(["Typeset", MathJax.Hub]),
+        "function" == typeof loadMeting && loadMeting(),
+            this.action.closeNav()
+    },
+    fancybox: function() { ($(".post-content img").length || $(".comment-content img").length) && ($("img:not([class~='link-avatar'],[no-fancybox])", ".post-content").wrap(function() {
+        return '<a href="' + this.src + '" data-caption="' + this.title + '" no-pjax class="fancybox" data-fancybox="gallery" style="outline:0"></a>'
+    }), $("img", ".comment-text").wrap(function() {
+        return '<a href="' + this.src + '" data-caption="' + this.title + '" no-pjax class="fancybox" style="outline:0"></a>'
+    }), $("a.fancybox").fancybox({
+        animationEffect: "zoom-in-out",
+        animationDuration: 500,
+        transitionEffect: "tube",
+        transitionDuration: 500,
+        spinnerTpl: '<img style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);" src="' + THEME_CONFIG.THEME_URL + '/assets/img/loading.gif">'
+    }))
+    },
+    hitokoto: function() {
+        $.ajax({
+            type: "GET",
+            url: THEME_CONFIG.HITOKOTO_ORIGIN,
+            success: function(t) {
+                $("#hitokoto").html(t)
+            }
+        })
+    },
+    hljs: {
+        init: function() {
+            $("pre code").each(function(t, n) {
+                hljs.highlightBlock(n),
+                    $(n).parent().attr("class", "highlight-wrap")
+            }),
+                this.addLineNumber(),
+                this.addLangType()
+        },
+        addLineNumber: function() {
+            $("div.line-number").length <= 0 && $("pre>code").each(function() {
+                for (var t = $(this), n = parseInt(t.data("line-start")), e = (parseInt(t.data("line-focus")), (r = t.html().split("\n")).length), o = '<div class="line-number" ' + (isNaN(n) ? "": 'start="' + n + '"') + ">", i = 0; i < e; i++) o += '<span class="highlight" data-line="' + (i + 1) + '"><span class="hl-child">',
+                    o += r[i] + "</span></span>";
+                o += "</div>";
+                var r = t.empty().append(o)
+            })
+        },
+        addLangType: function() {
+            $("code[class~='hljs']").each(function() {
+                var t = null == $(this).attr("class").match(/lang-(\w+)/) ? "CODE": $(this).attr("class").match(/lang-(\w+)/)[1].toUpperCase();
+                $(this).attr("data-lang", t)
+            })
+        }
+    },
+    lazyload: function() {
+        $("img:not([no-lazyload])").each(function() {
+            $(this).attr("data-original", $(this).attr("src")),
+                $(this).attr("src", THEME_CONFIG.THEME_URL + "/assets/img/loading.gif")
+        }),
+            $(".lazyload").lazyload({
+                effect: "fadeIn"
+            }),
+            $("img:not([no-lazyload])").lazyload({
+                effect: "fadeIn"
+            })
+    },
+    postOther: {
+        init: function() {
+            this.postQrCode(),
+                this.postReward()
+        },
+        postQrCode: function() {
+            THEME_CONFIG.SHOW_QRCODE && $(".post-qrcode").length && $(".post-qrcode>a").on("click",
+                function() {
+                    "none" !== $(".post-qrcode>div").css("display") ? $(".post-qrcode>div").fadeOut() : $(".post-qrcode>div").fadeIn().css("display", "block")
+                })
+        },
+        postReward: function() {
+            THEME_CONFIG.SHOW_REWARD && $(".post-reward").length && $(".post-reward>a").on("click",
+                function() {
+                    "none" !== $(".post-reward>ul").css("display") ? $(".post-reward>ul").fadeOut() : $(".post-reward>ul").fadeIn().css("display", "block")
+                })
+        }
+    }
+};

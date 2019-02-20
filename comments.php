@@ -14,6 +14,10 @@
     #page-nav ul li a{
         text-decoration: none;
     }
+    .img-fluid{
+        height: 40px;
+        width: 40px;
+    }
 </style>
 
 <?php
@@ -39,7 +43,7 @@ function threadedComments($comments, $options) {
     echo $commentClass;
     ?>">
         <a class="gitment-comment-avatar" href="" target="_blank">
-            <?php $comments->gravatar('40', ''); ?>
+            <?php $comments->gravatar('240', '30'); ?>
         </a>
         <div class="gitment-comment-main">
             <div class="gitment-comment-header">
@@ -156,7 +160,7 @@ function threadedComments($comments, $options) {
         <?php endif; ?>
         <p>
             <label for="textarea" class="required"></label>
-            <textarea style="background: url('<?php $this->options->themeUrl('assets/img/textarea_2.png'); ?>') right bottom no-repeat;background-size: 180px 180px;" rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="念念不忘，必有失望。"><?php $this->remember('text'); ?></textarea>
+            <textarea style="background: url('<?php $this->options->themeUrl('assets/img/textarea_2.png'); ?>') right bottom no-repeat;background-size: 180px 180px;" rows="8" cols="50" name="text" id="textarea" class="textarea" placeholder="<?php $this->options->placeholder(); ?>"><?php $this->remember('text'); ?></textarea>
         </p>
         <div id="comment-footer">
             <div class="OwO">

@@ -18,6 +18,10 @@
         height: 40px;
         width: 40px;
     }
+    .avatar{
+        height: 40px;
+        width: 40px;
+    }
 </style>
 
 <?php

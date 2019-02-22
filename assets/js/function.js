@@ -160,12 +160,7 @@ $('.el-menu-item').mouseout(function () {
     $('#menu_'+val).hide();//就隐藏div
 })
 
-$(function () {
-    var url = $('#hitokoto').attr('val_url');
-    $.get(url,function (t) {
-        $("#hitokoto").html(t)
-    })
-})
+
 function menu_select(sign) {
     if($('#dropdown-menu-5411').is(':hidden')){//如果当前隐藏
         $('#dropdown-menu-5411').show();//那么就显示div

@@ -63,7 +63,7 @@ function threadedComments($comments, $options) {
             </div>
             <div class="gitment-comment-body gitment-markdown">
                 <?php showCommentContent($comments->coid); ?>
-            </pre>
+                </pre>
 
             </div>
         </div>
@@ -103,9 +103,9 @@ function threadedComments($comments, $options) {
 </div>
 
 <div id="<?php $this->respondId(); ?>" class="respond">
-<!--    <div class="cancel-comment-reply">-->
-<!--        --><?php //$comments->cancelReply('<i class="iconfont icon-aria-cancel"></i>'); ?>
-<!--    </div>-->
+    <!--    <div class="cancel-comment-reply">-->
+    <!--        --><?php //$comments->cancelReply('<i class="iconfont icon-aria-cancel"></i>'); ?>
+    <!--    </div>-->
 
 
 
@@ -169,9 +169,9 @@ function threadedComments($comments, $options) {
         <div id="comment-footer">
             <div class="OwO">
             </div><!--end .OwO-->
-<!--            <div class="comment-image">-->
-<!--                <span><i class="iconfont icon-aria-picture"></i>图片</span>-->
-<!--            </div>-->
+            <!--            <div class="comment-image">-->
+            <!--                <span><i class="iconfont icon-aria-picture"></i>图片</span>-->
+            <!--            </div>-->
             <?php if(isEnabled('useCommentToMail','AriaConfig')): ?>
                 <div id="comment-ban-mail" class="ui toggle checkbox">
                     <input name="banmail" type="checkbox" value="stop">

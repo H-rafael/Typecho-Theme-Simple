@@ -288,7 +288,7 @@ function showNav($mode,$slugs)
                 $html .= "</li>";
                 echo $html;
                 $i++;
-             }
+            }
         } else {
             foreach ($data as $v) {
                 $text = array_key_exists('text', $v) ? $v['text'] : "";
@@ -490,7 +490,7 @@ function getBackground()
         $n = mt_rand(0, count($urls) - 1);
         echo $urls[$n];
     } else {
-        $options->themeUrl('/assets/img/thumbnail2.jpg'); //背景图转换
+        $options->themeUrl('/assets/img/ba.jpg'); //背景图转换
 //        $options->themeUrl('/assets/img/thumbnail.jpg'); //背景图转换
     }
 
@@ -509,7 +509,7 @@ function getThumbnail()
         $n = mt_rand(0, count($urls) - 1);
         return $urls[$n];
     } else {
-        return $options->themeUrl . '/assets/img/miku_img.jpg'; //封面图转换
+        return $options->themeUrl . '/assets/img/postchat.jpg'; //封面图转换
     }
 
 }

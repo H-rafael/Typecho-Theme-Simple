@@ -6,8 +6,9 @@
             <a data-v-d81624e6="" href="mailto:<?php $this->remember('mail'); ?>" target="_blank"><span data-v-d81624e6=""><i data-v-d81624e6="" aria-hidden="true" class="fa fa-envelope"></i></span></a>
         </div>
 
+
         <?php if(isEnabled('showHitokoto','AriaConfig')): ?>
-            <a data-v-d81624e6="" class="powered-by" id="hitokoto" val_url="<?php getHitokoto()?>"></a>
+            <a data-v-d81624e6="" class="powered-by" id="hitokoto" val_url="<?php getHitokoto()?>"><?php getHitokoto()?></a>
         <?php endif; ?>
 
         <a data-v-d81624e6="" class="powered-by"><?php //getHitokoto(); ?></a>
@@ -77,6 +78,9 @@
 //    }
 
     $(function () {
+        var url_g = '<?php print_r(getHitokoto());?>';
+        console.log(url_g);
+        console.log(3333);
         var url = $('#hitokoto').attr('val_url');
         $.get(url,function (t) {
             $("#hitokoto").html(t)
@@ -105,6 +109,7 @@
     $('.post-reward').click(function () {
         if($('.post-reward ul').is(':hidden')){//如果当前隐藏
             $('.post-reward ul').show();
+            console.log($('.post-reward ul').show())
         }else{//否则
             $('.post-reward ul').hide();//就隐藏div
         }

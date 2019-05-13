@@ -45,7 +45,8 @@
     <![endif]-->
 
     <?php
-//    print_r(getThumbnail());
+
+//    echo getHitokoto();
 //    print_r(getBackground());
 //    print_r($this->is('post'));
 //    print_r($this->is('page'));

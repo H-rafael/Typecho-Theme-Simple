@@ -891,24 +891,16 @@ function getPermalinkFromSlug()
 function getHitokoto(){
 
     $options = Helper::options();
-    $url = !empty($options->hitokotoOrigin) ? $options->hitokotoOrigin : 'https://v1.hitokoto.cn/?c=a&encode=text';
-//    echo !empty($options->hitokotoOrigin) ? $options->hitokotoOrigin : 'https://v1.hitokoto.cn/?c=a&encode=text';
+    echo $options->hitokotoOrigin ? $options->hitokotoOrigin : 'https://v1.hitokoto.cn/?c=a&encode=text';
 
-
-    // 1. 初始化
-    $ch = curl_init();
-    // 2. 设置选项，包括URL
-    curl_setopt($ch,CURLOPT_URL,$url);
-    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-    curl_setopt($ch,CURLOPT_HEADER,0);
-    // 3. 执行并获取HTML文档内容
-    $output = curl_exec($ch);
-    if($output === FALSE ){
-        echo "CURL Error:".curl_error($ch);
-    }
-    echo $output;
-    // 4. 释放curl句柄
-    curl_close($ch);
+//    die;
+//    $array_data = json_decode(file_get_contents($url),true);
+//    print_r($array_data);
+//    $content = '';
+//    if(!empty($array_data)){
+//        $content = $array_data['hitokoto'];
+//    }
+//    echo $content;
 }
 
 /**

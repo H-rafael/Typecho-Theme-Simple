@@ -7,7 +7,8 @@
         </div>
 
 
-        <?php if(isEnabled('showHitokoto','AriaConfig')): ?>
+        <?php
+        if(isEnabled('showHitokoto','AriaConfig')): ?>
             <a data-v-d81624e6="" class="powered-by" id="hitokoto" val_url="<?php getHitokoto()?>"><?php getHitokoto()?></a>
         <?php endif; ?>
 
@@ -19,8 +20,15 @@
 </footer>
 </div>
 <link href="<?php $this->options->themeUrl('assets/css/base-style.css'); ?>" rel="stylesheet">
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<!--<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>-->
 
+
+<!--End-->
 <script type="text/javascript">
+
 
     (function ($) {
         var img = '<?php $this->options->themeUrl('assets/img/log.jpg'); ?>';

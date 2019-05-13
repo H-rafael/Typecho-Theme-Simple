@@ -180,13 +180,6 @@ $(function () {
     })
 })
 
-$('.post-reward').click(function () {
-    if($('.post-reward ul').is(':hidden')){//如果当前隐藏
-        $('.post-reward ul').show();
-    }else{//否则
-        $('.post-reward ul').hide();//就隐藏div
-    }
-})
 
 
 $.fn.extend({

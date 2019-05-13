@@ -44,18 +44,17 @@
     <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
+    <?php
+//    print_r(getThumbnail());
+//    print_r(getBackground());
+//    print_r($this->is('post'));
+//    print_r($this->is('page'));
+//    print_r($this->is('single'));
+    ?>
     <style>
         #app {
             background: url(
-            <?php
-                    if($this->is('post') || $this->is('page') || $this->is('single'))
-                        if($this->fields->thumbnail)
-                            $this->fields->thumbnail();
-                        else
-                            echo getThumbnail();
-                    else
-                        getBackground();
-                ?>
+
             ) 50% center / cover no-repeat fixed rgb(255, 255, 255);
         }
 
@@ -63,6 +62,11 @@
 </head>
 <?php AriaConfig(); ?>
 <body>
+
+<!--<div id="preloader">-->
+<!--    <div id="preloader-inner"></div>-->
+<!--</div>-->
+
 <ul data-v-26df1257="" class="el-dropdown-menu el-popper el-dropdown-menu--small " id="dropdown-menu-5411" style="position: fixed; top: 36px; left: 5px; transform-origin: center top 0px; z-index: 2000; display:none" x-placement="bottom-end">
     <?php $slugs = getPermalinkFromSlug();showNav(0,$slugs);
     ?>
@@ -101,7 +105,7 @@
                     </ul>
                 </div>
             </div>
-            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(50px); background: url('http://ww1.sinaimg.cn/large/ac1a0c4agy1ftz7qj6l3xj21hc0u0b29.jpg') 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
+            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(50px); background: url('') 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
         </div>
     </div>
 
@@ -120,17 +124,9 @@
             <p data-v-73f77182="" class="author"><?php $this->options->title(); ?></p>
             <p data-v-73f77182="" class="description"><?php $this->options->description(); ?></p>
 
-            <div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(30px);
+            <div id="header_img" style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; content: &quot;&quot;; filter: blur(30px);
                     background: url(
-                        <?php
-                        if($this->is('post') || $this->is('page') || $this->is('single'))
-                            if($this->fields->thumbnail)
-                                $this->fields->thumbnail();
-                            else
-                                echo getThumbnail();
-                        else
-                            getBackground();
-                        ?>
+
                     ) 50% center / cover no-repeat fixed rgb(255, 255, 255); height: 100%; width: 100%;"></div>
         </div>
     </header>

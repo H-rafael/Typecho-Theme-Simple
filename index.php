@@ -25,9 +25,12 @@ $this->need('header.php');
             <div data-v-e8c9ac44="" data-v-802392fc="" class="article-card">
                 <h1 data-v-e8c9ac44="" class="title"><a data-v-e8c9ac44="" href="<?php $this->permalink() ?>" class=""><span data-v-e8c9ac44=""><?php $this->sticky(); $this->title() ?></span></a></h1>
                 <p data-v-e8c9ac44="" class="meta"><span data-v-e8c9ac44="" class="create-time"><?php $this->category(' ',true,'无'); ?> <?php $this->date('F jS, Y'); ?></span></p>
-                <div data-v-e8c9ac44="" class="box cover">
+                <div data-v-e8c9ac44="" class="box cover" >
+
                     <a href="<?php $this->permalink() ?>">
-                        <div data-v-e8c9ac44="" class="photo-wrapper" style="
+
+
+                    <div data-v-e8c9ac44="" class="photo-wrapper" style="
                                 background: url(
                         <?php if($this->fields->thumbnail)
                             $this->fields->thumbnail();
@@ -35,7 +38,9 @@ $this->need('header.php');
                             echo getThumbnail();
                         ?>);
                                 background-position: center center;
-                                background-size: cover;"></div>
+                                background-size: cover;">
+                        <img  data-src="<?php if($this->fields->thumbnail) $this->fields->thumbnail(); else echo getThumbnail(); ?>"/>
+                        </div>
                     </a>
                 </div>
                 <article data-v-e8c9ac44="" id="detailable-content">
